@@ -1,0 +1,411 @@
+* {
+    border: 0;
+    text-decoration: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    position: relative;
+}
+
+/*TRANSITIONS AND ANIMATIONS*/
+.css-transitions {
+    transition: .5s;
+    -webkit-transition: .5s;
+}
+
+/*GENERAL SETTINGS*/
+.clear {
+    clear: both;
+}
+
+.active {
+    display: block !important;
+}
+
+body {
+    background-color: #fefefe;
+}
+
+/*SPECIAL FONT FORMATTING*/
+p, a {
+    font-family: arial, sans-serif;
+    font-size: 14pt;
+    font-weight: lighter;
+}
+
+h1, h2, h3, h4 ,h5 {
+    font-family: Aldrich, sans-serif;
+}
+
+/*FONT PADDING*/
+/*P*/
+p + p {
+    margin-top: 20px;
+}
+
+p + h1, p + h2, p + h3, p + h4, p + h5 {
+    margin-top: 20px;
+}
+
+p + ul, p + ol {
+    margin-top: 8px;
+}
+
+/*H*/
+h1 + h2, h2 + h3 {
+    margin-top: 16px;
+}
+
+h3 + h4 {
+    margin-top: 12px;
+}
+
+h4 + h5 {
+    margin-top: 8px;
+}
+
+h1 + p, h2 + p {
+    margin-top: 4px;
+}
+
+h3 + p, h4 + p, h5 + p {
+    margin-top: 0px;
+}
+
+/*UL*/
+h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul {
+    margin-top: 8px;
+}
+
+ul + h1, ul + h2, ul + h3, ul + h4, ul + h5, ul + p, ul + pre, ul + ul, ol + h1, ol + h2, ol + h3, ol + h4, ol + h5, ol + p, ol + pre, ol + ol {
+    margin-top: 30px;
+}
+
+/*LI*/
+li + li {
+    margin-top: 8px;
+}
+
+/*PRE*/
+h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, p + pre, pre + pre {
+    margin-top: 8px;
+}
+
+ul + pre, ol + pre {
+    margin-top: 24px;
+}
+
+pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + ol, pre + ul, pre + p {
+    margin-top: 30px;
+}
+
+pre {
+    padding: 20px;
+    background-color: #ccc;
+}
+
+/*GENERAL BODY*/
+.first-holder {
+    padding-top: 320px !important;
+    margin-bottom: 200px;
+}
+
+.first-holder h4 {
+    padding-top: 20px;
+    color: #ccc;
+}
+
+.first-holder h4:hover {
+    color: #666;
+}
+
+.holder {
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.divider {
+    height: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #666;
+}
+
+.two-columns {
+    float: left;
+    width: 50%;
+}
+
+.three-columns {
+    float: left;
+    width: 33%;
+}
+
+.four-columns {
+    float: left;
+    width: 25%;
+}
+
+/*HEADER*/
+header {
+    display: block;
+    background-color: #fefefe;
+    height: 280px;
+    width: 100%;
+    min-width: 1000px;
+    position: fixed;
+    z-index: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+header:hover {
+    opacity: 1.0;
+}
+
+header h1 {
+    width: 210px;
+    height: 260px;
+    font-size: 100pt;
+    color: #ccc;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+}
+
+header h2 {
+    position: absolute;
+    left: 160px;
+    top: 8px;
+    font-size: 40pt;
+    padding-top: 10px;
+}
+
+/*HEADER MENU*/
+#header-menu {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    list-style-type: none;
+}
+
+#header-menu li {
+    float: right;
+}
+
+#header-menu a {
+    display: block;
+    padding: 4px;
+}
+
+/*BOX SLIDE*/
+.box-frame {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.box-slide {
+    top: -100%;
+    width: 100%;
+    height: 200%;
+}
+
+.box-slide:hover {
+    top: 0%;
+    width: 100%;
+    height: 200%;
+}
+
+.box-slide-half {
+    height: 40%;
+    width: 80%;
+    padding: 10%;
+}
+
+/*BUTTONS*/
+.button-sm {
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.button-md {
+    display: block;
+    width: 240px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18pt;
+}
+
+.button-sm-round {
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 60px;
+    background: #f7f7f7; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f7f7f7 0%, #d1d1d1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#d1d1d1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f7f7f7 0%,#d1d1d1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f7f7f7 0%,#d1d1d1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f7f7f7 0%,#d1d1d1 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f7f7f7 0%,#d1d1d1 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#d1d1d1',GradientType=0 ); /* IE6-9 */
+    -moz-box-shadow: 0 6px 10px -4px #000;
+    -webkit-box-shadow: 0 6px 10px -4px #000;
+    box-shadow: 0 6px 10px -4px #000;
+}
+
+.button-sm-round:hover {
+    -moz-box-shadow: inset 0 0 17px -5px #000;
+    -webkit-box-shadow: inset 0 0 17px -5px #000;
+    box-shadow: inset 0 0 17px -5px #000;
+    background: #bcbcbc; /* Old browsers */
+    background: -moz-linear-gradient(top,  #bcbcbc 0%, #e0e0e0 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #bcbcbc 0%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #bcbcbc 0%,#e0e0e0 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #bcbcbc 0%,#e0e0e0 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #bcbcbc 0%,#e0e0e0 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
+}
+
+.button-sm-round i {
+    display: inline-block !important;
+    margin: 10px;
+    font-size: 18pt;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 40px;
+    background: #d1d1d1; /* Old browsers */
+    background: -moz-linear-gradient(top,  #d1d1d1 0%, #f7f7f7 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d1d1d1), color-stop(100%,#f7f7f7)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #d1d1d1 0%,#f7f7f7 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #d1d1d1 0%,#f7f7f7 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #d1d1d1 0%,#f7f7f7 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #d1d1d1 0%,#f7f7f7 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#f7f7f7',GradientType=0 ); /* IE6-9 */
+}
+
+.button-md-round {
+    display: block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 100px;
+    background: #f7f7f7; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f7f7f7 0%, #d1d1d1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#d1d1d1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f7f7f7 0%,#d1d1d1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f7f7f7 0%,#d1d1d1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f7f7f7 0%,#d1d1d1 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f7f7f7 0%,#d1d1d1 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#d1d1d1',GradientType=0 ); /* IE6-9 */
+    -moz-box-shadow: 0 6px 10px -4px #000;
+    -webkit-box-shadow: 0 6px 10px -4px #000;
+    box-shadow: 0 6px 10px -4px #000;
+}
+
+.button-md-round:hover {
+    -moz-box-shadow: inset 0 0 17px -5px #000;
+    -webkit-box-shadow: inset 0 0 17px -5px #000;
+    box-shadow: inset 0 0 17px -5px #000;
+    background: #bcbcbc; /* Old browsers */
+    background: -moz-linear-gradient(top,  #bcbcbc 0%, #e0e0e0 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #bcbcbc 0%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #bcbcbc 0%,#e0e0e0 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #bcbcbc 0%,#e0e0e0 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #bcbcbc 0%,#e0e0e0 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
+}
+
+.button-md-round i {
+    display: inline-block !important;
+    margin: 15px;
+    font-size: 36pt;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 70px;
+    background: #d1d1d1; /* Old browsers */
+    background: -moz-linear-gradient(top,  #d1d1d1 0%, #f7f7f7 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d1d1d1), color-stop(100%,#f7f7f7)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #d1d1d1 0%,#f7f7f7 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #d1d1d1 0%,#f7f7f7 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #d1d1d1 0%,#f7f7f7 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #d1d1d1 0%,#f7f7f7 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#f7f7f7',GradientType=0 ); /* IE6-9 */
+}
+
+/*BUTTON EFFECTS*/
+.effect-popup:hover {
+    -moz-box-shadow: 0 0 6px 1px #000;
+    -webkit-box-shadow: 0 0 6px 1px #000;
+    box-shadow: 0 0 6px 1px #000;
+}
+
+.effect-recess:hover {
+    -moz-box-shadow: inset 0 0 6px 1px #000;
+    -webkit-box-shadow: inset 0 0 6px 1px #000;
+    box-shadow: inset 0 0 6px 1px #000;
+}
+
+/*OVERLAY*/
+#overlay {
+    position: absolute;
+    z-index: 1000;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#interactive-div {
+    position: absolute;
+    top: 200px;
+    background-color: #fff;
+    width: 600px;
+    height: 400px;
+    z-index: 0;
+    opacity: 0.0;
+}
+
+/*ZOOM MENU ITEMS*/
+#item-menu {
+    margin-bottom: 20px !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#item-menu li {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #f2f2f2;
+    margin-top: 0px;
+    margin-right: 10px;
+    float: left;
+}
+
+#item-menu li:hover {
+    width: 80px;
+    height: 80px;
+}
+
+#item-menu li.increase {
+    width: 60px;
+    height: 60px;
+}
