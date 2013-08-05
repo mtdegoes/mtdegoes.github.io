@@ -107,7 +107,7 @@ pre {
 
 /*GENERAL BODY*/
 .first-holder {
-    padding-top: 320px !important;
+    padding-top: 120px !important;
     margin-bottom: 200px;
 }
 
@@ -152,7 +152,7 @@ pre {
 header {
     display: block;
     background-color: #fefefe;
-    height: 280px;
+    height: 100px;
     width: 100%;
     min-width: 1000px;
     position: fixed;
@@ -164,18 +164,8 @@ header:hover {
     opacity: 1.0;
 }
 
-header h1 {
-    width: 210px;
-    height: 260px;
-    font-size: 100pt;
-    color: #ccc;
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-}
-
 header h2 {
     position: absolute;
-    left: 160px;
     top: 8px;
     font-size: 40pt;
     padding-top: 10px;
@@ -408,4 +398,11 @@ header h2 {
 #item-menu li.increase {
     width: 60px;
     height: 60px;
+}
+
+/*PERSONAL CONTENT*/
+input.workout {
+    display: inline-block;
+    margin-right: 320px;
+    float: right;
 }
