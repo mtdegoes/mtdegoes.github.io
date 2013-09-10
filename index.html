@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/innerpage.css">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
             <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+            <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500,900,700|Geo:400,400italic|Nunito:400,300,700' rel='stylesheet' type='text/css'>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script type="text/javascript" src="js/default.js"></script>
-        <title>Work me out</title>
+        <script type="text/javascript" src="js/home.js"></script>
+        <title>Heavy Steel</title>
     </head>
     <body>
-        <header>
-            <section class="holder">
-                <h2>Workout Schedule</h2>
-            </section>
-        </header>
-        <section class="holder first-holder">
-            <div class="two-columns">
-                <h1><i class="icon-sun"></i> Morning Workout <span>9:45-10:45</span></h1>
-                <h4>Nathan L <input class="workout" type="checkbox"></h4>
-                <h4>Tom S <input class="workout" type="checkbox"></h4>
-                <h4>Matthew D <input class="workout" type="checkbox"></h4>
-                <h4>Franco P <input class="workout" type="checkbox"></h4>
-                <h4>John D <input class="workout" type="checkbox"></h4>
-                <h4>Kris N <input class="workout" type="checkbox"></h4>
+        <section id="introduction-main">
+            <h1>HEAVY STEEL</h1>
+        </section>
+        <section class="holder">
+            <div id="ship-selector">
+                <div class="two-columns">
+                    <div class="padding-20">
+                        <h2>Earth Protectorate</h2>
+                        <ul>
+                            <li><a class="epheavycorvette effect-recess" href="epheavy-corvette.html">Heavy Corvette</a></li>
+                            <li><a class="epblockaderunner effect-recess" href="epblockade-runner.html">Blockade Runner</a></li>
+                            <li><a class="epsupporthulk effect-recess" href="epsupport-hulk.html">Support Hulk</a></li>
+                            <li><a class="epdestroyer effect-recess" href="epdestroyer.html">Destroyer</a></li>
+                            <li class="js-clear-float"><a class="epbattleship effect-recess" href="epbattleship.html">Battleship</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="two-columns js-clear-float">
+                    <div class="padding-20">
+                        <h2>Immortal Empire</h2>
+                        <ul>
+                            <li><a class="iemediumcorvette effect-recess" href="iemedium-corvette.html">Medium Corvette</a></li>
+                            <li><a class="iemediumfrigate effect-recess" href="iemedium-frigate.html">Medium Frigate</a></li>
+                            <li><a class="ieheavyfrigate effect-recess" href="ieheavy-frigate.html">Heavy Frigate</a></li>
+                            <li><a class="iesupporthulk effect-recess" href="iesupport-hulk.html">Support Hulk</a></li>
+                            <li class="js-clear-float"><a class="iedreadnought effect-recess" href="iedreadnought.html">Dreadnought</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="two-columns js-clear-float">
-                <h1><i class="icon-moon"></i> Afternoon Workout <span>1:20-2:20</span></h1>
-                <h4>Nathan L <input class="workout" type="checkbox"></h4>
-                <h4>Tom S <input class="workout" type="checkbox"></h4>
-                <h4>Matthew D <input class="workout" type="checkbox"></h4>
-                <h4>Franco P <input class="workout" type="checkbox"></h4>
-                <h4>John D <input class="workout" type="checkbox"></h4>
-                <h4>Kris N <input class="workout" type="checkbox"></h4>
+            <div id="random-generator">
+                <a id="roll-dice" class="glass-white min-shadow effect-popup css-transitions" href="#"><i class="icon-group"></i> Roll</a>
+                <p id="results-field"></p>
             </div>
         </section>
-        <footer>
-            <section class="holder">
-                
-            </section>
-        </footer>
     </body>
 </html>

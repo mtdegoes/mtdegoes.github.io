@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/innerpage.css">
+            <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+            <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500,900,700|Geo:400,400italic|Nunito:400,300,700' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/default.js"></script>
+        <title>Medium Frigate</title>
+    </head>
+    <body>
+        <audio id="audio" src="sounds/ie-ambient.wav" preload="auto" autoplay="autoplay" loop> 
+        </audio>
+        <section class="holder">
+            <h1>Alexander</h1>
+            <h4>Class <span class="ship-data">Medium Frigate A.I.C. 0D5.55.78B9</span></h4>
+            <div id="ship-record" class="css-transitions js-closeable">
+                <div class="two-columns">
+                    <h4>Speed</h4>
+                    <p id="speed-value"><span class="ship-data">.20</span></p>
+                </div>
+                <div class="two-columns js-clear-float">
+                    <h4>Hull Rating</h4>
+                    <p id="hull-value"><span class="ship-data">65</span></p>
+                </div>
+                <h4>Service History</h4>
+                <p><span class="ship-data">...</span></p>
+            </div>
+            <div id="ship-specifications">
+                <div class="three-columns">
+                    <div class="system-details">
+                        <div class="two-columns">
+                            <h1 id="shield-value">0</h1>
+                        </div>
+                        <div class="two-columns js-clear-float">
+                            <i class="icon-shield"></i>
+                            <p>Shields</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="three-columns">
+                    <div class="system-details">
+                        <div class="two-columns">
+                            <h1 id="interceptors-value">0</h1>
+                            <h5 id="interceptors-used">0</h5>
+                        </div>
+                        <div class="two-columns js-clear-float">
+                            <i class="icon-rocket"></i>
+                            <p>Interceptors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="three-columns js-clear-float">
+                    <div class="system-details">
+                        <div class="two-columns">
+                            <h1 id="batteries-value">0</h1>
+                        </div>
+                        <div class="two-columns js-clear-float">
+                            <i class="icon-screenshot"></i>
+                            <p>Weapons</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="system-messages">
+            <h5>CNC Messages</h5>
+            <p id="message">This is a test message</p>
+        </section>
+        <section id="status-background">
+            <div id="overall-ship-status">
+            </div>
+        </section>
+        <section id="ship-visual">
+            <section class="holder">
+                <div id="js-ship-container">
+                    <img src="images/graphic-ie-medium-frigate.png">
+                    <ul id="js-ship-sections">
+                        <li class="active">
+                            <a class="section-shielded" href="#"></a>
+                            <div class="section-armor">2</div>
+                            <div class="section-shieldon">0</div>
+                            <div class="section-shieldgen">0</div>
+                            <div class="section-interceptors-temp">2</div>
+                            <div class="section-interceptors-perm">0</div>
+                            <div class="section-batteries-temp">3</div>
+                            <div class="section-batteries-perm">2</div>
+                            <form class="od-allotment">
+                                <p><i class="icon-rocket"></i> Interceptors <input class="interceptors" type="text" name="" value="0" tabindex=1></p>
+                                <p><i class="icon-screenshot"></i> Incoming <input class="batteries" type="text" name="" value="0" tabindex=7></p>
+                                <p><span class="hull-points">0</span><i class="icon-dashboard"></i> Hull</p>
+                                <p class="run-section hidden">Test</p>
+                            </form>
+                        </li>
+                        <li class="active">
+                            <a class="section-shielded" href="#"></a>
+                            <div class="section-armor">2</div>
+                            <div class="section-shieldon">0</div>
+                            <div class="section-shieldgen">1</div>
+                            <div class="section-interceptors-temp">0</div>
+                            <div class="section-interceptors-perm">0</div>
+                            <div class="section-batteries-temp">0</div>
+                            <div class="section-batteries-perm">4</div>
+                            <form class="od-allotment">
+                                <p><i class="icon-rocket"></i> Interceptors <input class="interceptors" type="text" name="" value="0" tabindex=1></p>
+                                <p><i class="icon-screenshot"></i> Incoming <input class="batteries" type="text" name="" value="0" tabindex=7></p>
+                                <p><span class="hull-points">0</span><i class="icon-dashboard"></i> Hull</p>
+                                <p class="run-section hidden">Test</p>
+                            </form>
+                        </li>
+                        <li class="active js-clear-float">
+                            <a class="section-shielded" href="#"></a>
+                            <div class="section-armor">2</div>
+                            <div class="section-shieldon">0</div>
+                            <div class="section-shieldgen">0</div>
+                            <div class="section-interceptors-temp">2</div>
+                            <div class="section-interceptors-perm">1</div>
+                            <div class="section-batteries-temp">0</div>
+                            <div class="section-batteries-perm">0</div>
+                            <form class="od-allotment">
+                                <p><i class="icon-rocket"></i> Interceptors <input class="interceptors" type="text" name="" value="0" tabindex=6></p>
+                                <p><i class="icon-screenshot"></i> Incoming <input class="batteries" type="text" name="" value="0" tabindex=12></p>
+                                <p><span class="hull-points">0</span><i class="icon-dashboard"></i> Hull</p>
+                                <p class="run-section blue-background effect-recess"><i class="icon-chevron-left"></i> Initiate <i class="icon-chevron-right"></i></p>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div id="battle-controls">
+                <div id="use-reserve-interceptors"><p><i class="icon-rocket"></i> Reserve Interceptors</p></div>
+                <div id="use-reserve-batteries"><p><i class="icon-screenshot"></i> Reserve Batteries </p></div>
+            </div>
+        </section>
+        <footer>
+            <h5>Copyright ©2013 Heavy Steel, Inc. All rights reserved.</h5>
+        </footer>
+    </body>
+</html>
