@@ -395,5 +395,71 @@ $(document).ready(function(){
     }
     shipSections();
     
+    //SYSTEM JUMP
+    $("#system-jump").click(function(){
+    	$("#system-map").html("<div class='gravity-well'><p>Gravity Well</p><div class='star'><p>Star</p></div></div>");
+    	
+    	function GenerateSystem(){
+    		var spacialBodySelector = Math.floor(Math.random() * (8-3+1)) + 3;
+
+    		//System Objects
+    		var spacialObjects=new Array(); 
+	    		spacialObjects[0]=" planet-terrestrial'><p>Terrestrial Planet</p><div>";
+	    		spacialObjects[1]=" planet-rouge'><p>Rogue Planet</p><div>";
+	    		spacialObjects[2]=" planet-proto'><p>Proto Planet</p><div>";
+	    		spacialObjects[3]=" planet-ocean'><p>Ocean Planet</p><div>";
+	    		spacialObjects[4]=" planet-ice'><p>Ice Giant</p><div>";
+	    		spacialObjects[5]=" planet-gas'><p>Gas Giant</p><div>";
+	    		spacialObjects[6]=" planet-helium'><p>Helium Planet</p><div>";
+	    		spacialObjects[7]=" planet-dwarf'><p>Dwarf Planet</p><div>";
+	    		spacialObjects[8]=" planet-desert'><p>Desert Planet</p><div>";
+	    		spacialObjects[9]=" planet-rock'><p>Rock Planet</p><div>";
+	    		spacialObjects[10]=" sobject-nebula'><p>Nebula</p><div>";
+	    		spacialObjects[11]=" sobject-astroid'><p>Astroid Belt</p><div>";
+	    		spacialObjects[12]=" planet-iron'><p>Iron Planet</p><div>";
+	    		spacialObjects[13]=" sobject-derelict'><p>Derelict Spaceship</p><div>";
+	    		spacialObjects[14]=" sobject-mining'><p>Abandoned Mining Station</p><div>";
+	    		spacialObjects[15]=" sobject-communications'><p>Abandoned Communications Post</p><div>";
+	    		spacialObjects[16]=" sobject-commet'><p>Commet</p><div>";
+	    		spacialObjects[17]=" planet-trojan'><p>Trojan Planet</p><div>";
+	    		spacialObjects[18]=" planet-pulsar'><p>Pulsar Planet</p><div>";
+	    		spacialObjects[19]=" planet-super-earth'><p>Super-Earth Planet</p><div>";
+	    		spacialObjects[20]=" planet-earth'><p>Earth Planet</p><div>";
+	    		spacialObjects[21]=" planet-binary'><p>Binary Planet</p><div>";
+	    		spacialObjects[22]=" planet-chthonian'><p>Chthonian Planet</p><div>";
+	    		spacialObjects[23]=" planet-carbon'><p>Carbon Planet</p><div>";
+	    		spacialObjects[24]=" planet-coreless'><p>Coreless Planet</p><div>";
+	    		spacialObjects[25]=" planet-eccentric'><p>Eccentric Planet</p><div>";
+	    		spacialObjects[26]=" sobject-moon'><p>Moon</p><div>";
+	    		spacialObjects[27]=" sobject-'><p>Trading Post</p><div>";
+	    		spacialObjects[28]=" planet-exo'><p>Exo Planet</p><div>";
+	    		spacialObjects[29]=" planet-meso'><p>Meso Planet</p><div>";
+
+	    	//OBJECT SIZES
+	    	var objectSizes=new Array(); 
+	    		objectSizes[0]="<div class='ring-finder osize-small";
+	    		objectSizes[1]="<div class='ring-finder osize-medium";
+	    		objectSizes[2]="<div class='ring-finder osize-large";
+	    		objectSizes[3]="<div class='ring-finder osize-huge";
+
+	    	for(var i = 0; i < spacialBodySelector; i++) {
+			    var selectedObject = spacialObjects[Math.floor(Math.random() * spacialObjects.length)];
+			    var selectedSize = objectSizes[Math.floor(Math.random() * objectSizes.length)];
+    			$(".gravity-well").after(selectedSize + selectedObject);
+			}
+
+    	}
+    	GenerateSystem();
+
+    	$("#system-map .ring-finder").each(function(){
+    		var itemWidth = $(this).width();
+    		var itemPositions = $(this).position();
+    		var ringCurcum = (itemPositions.left * 2) + itemWidth;
+    		
+    		$("#system-map").prepend("<div class='system-ring' style='width:" + ringCurcum + "px; height:"+ ringCurcum + "px; top: -" + ((ringCurcum / 2) -224) +"px; left: -" + (ringCurcum / 2) + "px; border-radius:" + ringCurcum + "px;'></div>");
+    	});
+
+    });
+
 });
 
