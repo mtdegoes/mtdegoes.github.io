@@ -498,6 +498,22 @@ ul.menu li a:hover {
     color: #666;
 }
 
+/*BACK BUTTON*/
+#nav-back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#nav-back-button a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #f2f2f2;
+}
+
 /*SHIP SPECIFICATIONS*/
 #ship-specifications {
     padding: 20px 0px 20px 0px;

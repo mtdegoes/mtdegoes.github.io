@@ -181,217 +181,222 @@ $(document).ready(function(){
     }
     
     function scrollMessage() {
-	$("#system-messages #message").animate({
-	    left: '100px'
-	},500, function(){
-	    $("#system-messages #message").delay(3000).animate({
-		left: '-4000px'
-	    },500);
-	});
+		$("#system-messages #message").animate({
+		    left: '100px'
+		},500, function(){
+		    $("#system-messages #message").delay(3000).animate({
+			left: '-4000px'
+		    },500);
+		});
     }
     
     /*DYNAMIC SHIP SECTIONS*/
     function shipSections() {
-	var thisElem = $("#js-ship-sections li");
-	
-	var sectionCount = thisElem.size();
-	var percentDiv = 100 / sectionCount;
-	
-	var hullValue = $('#hull-value span').html();
-	var hullPerSection = parseInt(hullValue / sectionCount);
-	$("#js-ship-sections li form.od-allotment p:nth-child(3) span").html(hullPerSection);
-	shipStatus();
-	
-	$(thisElem).css({width: percentDiv + "%"});
-	
-	/*SHIELD ALLOCATION*/
-	$("a.section-shielded").click(function(e){
-	    e.preventDefault();
-	    
-	    var currentElement = this;
-	    var availableShields = $("#shield-value").html();
-	    
-	    if (availableShields >= 1) {
-		$(this).closest("li").find(".section-shieldon").html(2);
-		availableShields = (availableShields -= 1)
-		$("#shield-value").html(availableShields);
+		var thisElem = $("#js-ship-sections li");
 		
-		setTimeout( function(){
-		    $(currentElement).closest("li").css({
-			background: "rgba(39, 169, 225, 0.5)"
-		    });
-		},500);
+		var sectionCount = thisElem.size();
+		var percentDiv = 100 / sectionCount;
+		
+		var hullValue = $('#hull-value span').html();
+		var hullPerSection = parseInt(hullValue / sectionCount);
+		$("#js-ship-sections li form.od-allotment p:nth-child(3) span").html(hullPerSection);
+		shipStatus();
+		
+		$(thisElem).css({width: percentDiv + "%"});
 	
-	    } else {
-		$("#system-messages #message").html("Negative Captain, all shields already assigned.");
-		scrollMessage();
-	    }
-	});
-
-	/*BATTLE CONTROLS*/
-	$("#battle-controls div").click(function(){
-	    var currentElement = $(this).attr('class');
-	    
-	    if (currentElement) {
-		$(this).removeClass('initiate');
-		updateShipSpecs();
-	    } else {
-		$(this).addClass('initiate');
-		updateShipSpecs();
-	    }
-	});
-	
-	function updateShipSpecs() {
-	    /*ARMOR*/
-	    var sumArmor = 0;
-	    $('#js-ship-sections li.active .section-armor').each(function() {
-		var currentValue = parseInt(this.innerHTML);
-		var numSum = (sumArmor += Number(currentValue));
-	    });
-	    
-	    /*SHIELD GENERATORS*/
-	    var sumShieldGen = 0;
-	    $('#js-ship-sections li.active .section-shieldgen').each(function() {
-		var currentValue = parseInt(this.innerHTML);
-		var numSum = (sumShieldGen += Number(currentValue));
-		
-		$("#shield-value").html(numSum);
-	    });
-	    
-	    /*INTERCEPTORS TEMP*/
-	    var sumIntTemp = 0;
-	    $('#js-ship-sections li.active .section-interceptors-temp').each(function() {
-		var currentValue = parseInt(this.innerHTML);
-		var numSum = (sumIntTemp += Number(currentValue));
-	    });
-	    
-	    /*INTERCEPTORS PERM*/
-	    var sumIntPerm = 0;
-	    $('#js-ship-sections li.active .section-interceptors-perm').each(function() {
-		var currentValue = parseInt(this.innerHTML);
-		var numSum = (sumIntPerm += Number(currentValue));
-		var intercepActive = $("#use-reserve-interceptors").attr('class');
-		
-		if (intercepActive) {
-		    sumInterceptors = numSum += sumIntTemp;
-		    $("#interceptors-value").html(sumInterceptors);
-		} else {
-		    sumInterceptors = numSum;
-		    $("#interceptors-value").html(sumInterceptors);
-		}
-	    });
-	    
-	    /*BATTERIES TEMP*/
-	    var sumBatTemp = 0;
-	    $('#js-ship-sections li.active .section-batteries-temp').each(function() {
-		var currentValue = parseInt(this.innerHTML);
-		var numSum = (sumBatTemp += Number(currentValue));
-	    });
-	    
-	    /*BATTERIES PERM*/
-	    var sumBatPerm = 0;
-	    $('#js-ship-sections li.active .section-batteries-perm').each(function() {
-		var currentValue = parseInt(this.innerHTML);
-		var numSum = (sumBatPerm += Number(currentValue));
-		var batteriesActive = $("#use-reserve-batteries").attr('class');
-		
-		if (batteriesActive) {
-		    sumBatteries = numSum += sumBatTemp;
-		    $("#batteries-value").html(sumBatteries);
-		} else {
-		    sumBatteries = numSum;
-		    $("#batteries-value").html(sumBatteries);
-		}
-	    });
-	}
-	updateShipSpecs();
-	
-	/*CALCULATOR FUNCTION*/
-	function runCalculations() {
-	    
-	    /*INTERCEPTORS*/
-	    usedInterceptors = 0
-	    $("#js-ship-sections li form.od-allotment input.interceptors").blur(function(){
-		
-		var sumIntFired = 0;
-		$('#js-ship-sections li form.od-allotment input.interceptors').each(function() {
-		    var currentValue = parseInt(this.value);
-		    var numSum = (sumIntFired += Number(currentValue));
+		/*SHIELD ALLOCATION*/
+		$("a.section-shielded").click(function(e){
+		    e.preventDefault();
 		    
-		    if (numSum <= sumInterceptors) {
-			$("#interceptors-used").html(numSum);
-			
+		    var currentElement = this;
+		    var availableShields = $("#shield-value").html();
+		    
+		    if (availableShields >= 1) {
+			$(this).closest("li").find(".section-shieldon").html(2);
+			availableShields = (availableShields -= 1)
+			$("#shield-value").html(availableShields);
+
+			setTimeout( function(){
+			    $(currentElement).closest("li").css({
+				background: "rgba(39, 169, 225, 0.5)"
+			    });
+			},500);
+		
 		    } else {
-			$("#interceptors-used").html(numSum);
-			$("#system-messages #message").html("Captain, please update defense grid, you've assigned too many interceptors.");
+			$("#system-messages #message").html("Negative Captain, all shields already assigned.");
 			scrollMessage();
 		    }
 		});
-	    });
-	}
-	runCalculations();
-	
-	/*RUN SECTION*/
-	$(".run-section").click(function(){
-	    var calcShipSpeed = $("#speed-value span").html();
-	    var batteriesActive = $("#use-reserve-batteries").attr('class');
-	    var intercepActive = $("#use-reserve-interceptors").attr('class');
-		
-	    if (batteriesActive) {
-		$("#use-reserve-batteries").fadeOut(1000).delay(100).remove();
-		updateShipSpecs()
-	    }
-	    
-	    if (intercepActive) {
-		$("#use-reserve-interceptors").fadeOut(1000).delay(100).remove();
-		updateShipSpecs()
-	    }
-	    
-	    $(".run-section").each(function(){
-		var calcArmor = $(this).closest("#js-ship-sections li.active").find("div.section-armor").html();
-		var calcShields = $(this).closest("#js-ship-sections li.active").find("div.section-shieldon").html();
-		var calcIntercept = $(this).closest("#js-ship-sections li.active").find("form.od-allotment input.interceptors").val();
-		var calcBatteries = $(this).closest("#js-ship-sections li.active").find("form.od-allotment input.batteries").val();
-		var calcHull = $(this).closest("#js-ship-sections li.active").find(".hull-points").html();
-		
-		var calcBatteriesPars = parseInt(calcBatteries);
-		var calcArmorPars = parseInt(calcArmor);
-		var calcShieldsPars = parseInt(calcShields);
-		var calcInterceptPars = parseInt(calcIntercept);
-		var calcHullPars = parseInt(calcHull);
-		
-		var a_calc = parseInt(calcBatteriesPars - (calcBatteriesPars * calcShipSpeed));
-		var b_calc = (a_calc - calcArmorPars - calcShieldsPars - calcInterceptPars);
-		
-		if (b_calc >= 1) {
-		    var calcHull = (calcHullPars - b_calc);
+
+		/*BATTLE CONTROLS*/
+		$("#battle-controls div").click(function(){
+		    var currentElement = $(this).attr('class');
 		    
-		    if (calcHull <= 0) {
-			var sectionIndex = ($(this).closest("#js-ship-sections li").index()) + 1
-			
-			$("#system-messages #message").html("Captain! Section -" + sectionIndex + "- has been lost, all systems are offline.");
-			scrollMessage();
-			
-			$(this).closest("#js-ship-sections li.active").removeClass("active");
-			$(this).closest("#js-ship-sections li").find(".hull-points").html("0");
-			updateShipSpecs();
-			
-			var currentElement = this;
-			setTimeout( function(){
-			    $(currentElement).closest("#js-ship-sections li").css({
-				background: "rgba(255, 0, 0, 0.5)"
-			    });
-			},500);
-			shipStatus();
-			
+		    if (currentElement) {
+				$(this).removeClass('initiate');
+				var currentShields = $("#shield-value").html();
+				updateShipSpecs();
+				$("#shield-value").html(currentShields);
 		    } else {
-			$(this).closest("#js-ship-sections li.active").find(".hull-points").html(calcHull);
-			shipStatus();
+				$(this).addClass('initiate');
+				var currentShields = $("#shield-value").html();
+				updateShipSpecs();
+				$("#shield-value").html(currentShields);
 		    }
+		});
+
+		function updateShipSpecs() {
+		    /*ARMOR*/
+		    var sumArmor = 0;
+		    $('#js-ship-sections li.active .section-armor').each(function() {
+			var currentValue = parseInt(this.innerHTML);
+			var numSum = (sumArmor += Number(currentValue));
+		    });
+		    
+		    /*SHIELD GENERATORS*/
+		    var sumShieldGen = 0;
+		    $('#js-ship-sections li.active .section-shieldgen').each(function() {
+			var currentValue = parseInt(this.innerHTML);
+			var numSum = (sumShieldGen += Number(currentValue));
+			
+			$("#shield-value").html(numSum);
+		    });
+		    
+		    /*INTERCEPTORS TEMP*/
+		    var sumIntTemp = 0;
+		    $('#js-ship-sections li.active .section-interceptors-temp').each(function() {
+			var currentValue = parseInt(this.innerHTML);
+			var numSum = (sumIntTemp += Number(currentValue));
+		    });
+		    
+		    /*INTERCEPTORS PERM*/
+		    var sumIntPerm = 0;
+		    $('#js-ship-sections li.active .section-interceptors-perm').each(function() {
+			var currentValue = parseInt(this.innerHTML);
+			var numSum = (sumIntPerm += Number(currentValue));
+			var intercepActive = $("#use-reserve-interceptors").attr('class');
+			
+			if (intercepActive) {
+			    sumInterceptors = numSum += sumIntTemp;
+			    $("#interceptors-value").html(sumInterceptors);
+			} else {
+			    sumInterceptors = numSum;
+			    $("#interceptors-value").html(sumInterceptors);
+			}
+		    });
+		    
+		    /*BATTERIES TEMP*/
+		    var sumBatTemp = 0;
+		    $('#js-ship-sections li.active .section-batteries-temp').each(function() {
+			var currentValue = parseInt(this.innerHTML);
+			var numSum = (sumBatTemp += Number(currentValue));
+		    });
+		    
+		    /*BATTERIES PERM*/
+		    var sumBatPerm = 0;
+		    $('#js-ship-sections li.active .section-batteries-perm').each(function() {
+			var currentValue = parseInt(this.innerHTML);
+			var numSum = (sumBatPerm += Number(currentValue));
+			var batteriesActive = $("#use-reserve-batteries").attr('class');
+			
+			if (batteriesActive) {
+			    sumBatteries = numSum += sumBatTemp;
+			    $("#batteries-value").html(sumBatteries);
+			} else {
+			    sumBatteries = numSum;
+			    $("#batteries-value").html(sumBatteries);
+			}
+		    });
 		}
-	    });
-	    $(".od-allotment input").val('0');
-	});
+		updateShipSpecs();
+
+		/*CALCULATOR FUNCTION*/
+		function runCalculations() {
+		    
+		    /*INTERCEPTORS*/
+		    usedInterceptors = 0
+		    $("#js-ship-sections li form.od-allotment input.interceptors").blur(function(){
+			
+			var sumIntFired = 0;
+			$('#js-ship-sections li form.od-allotment input.interceptors').each(function() {
+			    var currentValue = parseInt(this.value);
+			    var numSum = (sumIntFired += Number(currentValue));
+			    
+			    if (numSum <= sumInterceptors) {
+				$("#interceptors-used").html(numSum);
+				
+			    } else {
+				$("#interceptors-used").html(numSum);
+				$("#system-messages #message").html("Captain, please update defense grid, you've assigned too many interceptors.");
+				scrollMessage();
+			    }
+			});
+		    });
+		}
+		runCalculations();
+		
+		/*RUN SECTION*/
+		$(".run-section").click(function(){
+			playSound("sounds/effect-engage.wav");
+		    var calcShipSpeed = $("#speed-value span").html();
+		    var batteriesActive = $("#use-reserve-batteries").attr('class');
+		    var intercepActive = $("#use-reserve-interceptors").attr('class');
+			
+		    if (batteriesActive) {
+			$("#use-reserve-batteries").fadeOut(1000).delay(100).remove();
+			updateShipSpecs()
+		    }
+		    
+		    if (intercepActive) {
+			$("#use-reserve-interceptors").fadeOut(1000).delay(100).remove();
+			updateShipSpecs()
+		    }
+		    
+		    $(".run-section").each(function(){
+			var calcArmor = $(this).closest("#js-ship-sections li.active").find("div.section-armor").html();
+			var calcShields = $(this).closest("#js-ship-sections li.active").find("div.section-shieldon").html();
+			var calcIntercept = $(this).closest("#js-ship-sections li.active").find("form.od-allotment input.interceptors").val();
+			var calcBatteries = $(this).closest("#js-ship-sections li.active").find("form.od-allotment input.batteries").val();
+			var calcHull = $(this).closest("#js-ship-sections li.active").find(".hull-points").html();
+			
+			var calcBatteriesPars = parseInt(calcBatteries);
+			var calcArmorPars = parseInt(calcArmor);
+			var calcShieldsPars = parseInt(calcShields);
+			var calcInterceptPars = parseInt(calcIntercept);
+			var calcHullPars = parseInt(calcHull);
+			
+			var a_calc = parseInt(calcBatteriesPars - (calcBatteriesPars * calcShipSpeed));
+			var b_calc = (a_calc - calcArmorPars - calcShieldsPars - calcInterceptPars);
+			
+			if (b_calc >= 1) {
+			    var calcHull = (calcHullPars - b_calc);
+			    
+			    if (calcHull <= 0) {
+				var sectionIndex = ($(this).closest("#js-ship-sections li").index()) + 1
+				
+				$("#system-messages #message").html("Captain! Section -" + sectionIndex + "- has been lost, all systems are offline.");
+				scrollMessage();
+				
+				$(this).closest("#js-ship-sections li.active").removeClass("active");
+				$(this).closest("#js-ship-sections li").find(".hull-points").html("0");
+				updateShipSpecs();
+				
+				var currentElement = this;
+				setTimeout( function(){
+				    $(currentElement).closest("#js-ship-sections li").css({
+					background: "rgba(255, 0, 0, 0.5)"
+				    });
+				},500);
+				shipStatus();
+				
+			    } else {
+				$(this).closest("#js-ship-sections li.active").find(".hull-points").html(calcHull);
+				shipStatus();
+			    }
+			}
+		    });
+		    $(".od-allotment input").val('0');
+		});
     }
     shipSections();
     
@@ -405,8 +410,15 @@ $(document).ready(function(){
 		return results;
 	}
 
+	function playSound(soundLocation){
+		var battle = document.createElement('audio');
+	        battle.setAttribute('src', soundLocation);
+	        battle.setAttribute('autoplay', 'autoplay');
+	}
+
     //SYSTEM JUMP
     $("#system-jump").click(function(){
+    	playSound("sounds/warp-speed.wav");
     	$("#system-map").html("<ul id='system-grid'></ul><div class='gravity-well'><p>Gravity Well</p><div class='star'><p>Star</p></div></div>");
     	
     	function GenerateSystem(){
@@ -511,10 +523,10 @@ $(document).ready(function(){
 					
 					if (engagement) {
 						$(this).addClass("engagement").css({"background-color": "#820000", "border-color": "#820000"});
+						playSound("sounds/alarm-sound.wav");
 
-						var audioElement = document.createElement('audio');
-					        audioElement.setAttribute('src', 'sounds/alarm-sound.wav');
-					        audioElement.setAttribute('autoplay', 'autoplay');
+					} else {
+						playSound("sounds/flotilla-move.wav");
 					}
 
 					$(this).toggleClass("active");
