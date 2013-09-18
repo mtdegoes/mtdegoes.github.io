@@ -586,3 +586,12 @@ ul.menu li a:hover {
 .ieheavyfrigate {background-image: url("../images/thumbnails/thumb-ieheavyfrigate.png");}
 .iesupporthulk {background-image: url("../images/thumbnails/thumb-iesupporthulk.png");}
 .iedreadnought {background-image: url("../images/thumbnails/thumb-iedreadnought.png");}
+
+/*NAV MENU*/
+#nav-menu a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}

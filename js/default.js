@@ -395,9 +395,19 @@ $(document).ready(function(){
     }
     shipSections();
     
+	function randomizer(totalVar, randomArray){
+		var results=[];
+
+		for(var i = 0; i < totalVar; i++){
+			var returnVal = randomArray[Math.floor(Math.random() * randomArray.length)];
+			results.push(returnVal);
+		}
+		return results;
+	}
+
     //SYSTEM JUMP
     $("#system-jump").click(function(){
-    	$("#system-map").html("<div class='gravity-well'><p>Gravity Well</p><div class='star'><p>Star</p></div></div>");
+    	$("#system-map").html("<ul id='system-grid'></ul><div class='gravity-well'><p>Gravity Well</p><div class='star'><p>Star</p></div></div>");
     	
     	function GenerateSystem(){
     		var spacialBodySelector = Math.floor(Math.random() * (8-3+1)) + 3;
@@ -442,11 +452,75 @@ $(document).ready(function(){
 	    		objectSizes[2]="<div class='ring-finder osize-large";
 	    		objectSizes[3]="<div class='ring-finder osize-huge";
 
-	    	for(var i = 0; i < spacialBodySelector; i++) {
-			    var selectedObject = spacialObjects[Math.floor(Math.random() * spacialObjects.length)];
-			    var selectedSize = objectSizes[Math.floor(Math.random() * objectSizes.length)];
-    			$(".gravity-well").after(selectedSize + selectedObject);
+	    	var test1 = randomizer(spacialBodySelector, spacialObjects);
+	    	var test2 = randomizer(spacialBodySelector, objectSizes);
+	    	var k = 0;
+
+	    	for (var i = 0; i < spacialBodySelector; i++) {
+	    		$(".gravity-well").after(test2[k] + test1[k]);
+	    		k++;
+	    	}
+
+			function generateSystemGrid(){
+				var numOfDivisions = 16;
+				var systemWidth = $("#system-map").width();
+				var boxSize = systemWidth / numOfDivisions;
+				var numOfRows = parseInt($("#system-map").height() / boxSize);
+				var grid = (numOfRows * numOfDivisions) - 5;
+
+				for(var i = 0; i < grid; i++) {
+				    $("#system-grid").append("<li style='width: " + boxSize + "px; height: " + boxSize + "px'><h5>G" + i + "</h5></li>");
+
+				    $("system-grid li").width(boxSize).height(boxSize);
+				}
+
+				function assignEnemies(){
+					var enemyQuantity=new Array(); 
+		    			enemyQuantity[0]="7";
+		    			enemyQuantity[1]="14";
+		    			enemyQuantity[2]="28";
+
+					var enemyStrength = Math.floor(Math.random() * 3);
+					var enemyQuantities = enemyQuantity[enemyStrength];
+
+					if (enemyStrength == 0) {
+						$("#system-hostility").html("<i class='icon-rss'></i>Light Forces Detected");
+					} else if (enemyStrength == 1) {
+						$("#system-hostility").html("<i class='icon-rss'></i>Medium Forces Detected");
+					} else if (enemyStrength == 2) {
+						$("#system-hostility").html("<i class='icon-rss'></i>Heavy Forces Detected");
+					}
+
+					for(var i = 0; i < enemyQuantities; i++) {
+					    var selectedCell = Math.floor(Math.random() * grid);
+					    var flotillaNum = Math.floor(Math.random() * 7);
+
+					    $("#system-grid li:nth-child(" + selectedCell + ")").addClass("ep");
+					    $("#system-grid li:nth-child(" + selectedCell + ")").append("<h4><i class='icon-fighter-jet'></i>" + (flotillaNum + 1) + "</h4>");
+					}
+
+				}
+				assignEnemies();
+
 			}
+			generateSystemGrid();
+
+			function fleetPath(){
+				$("#system-grid li").click(function(){
+					var engagement = $(this).attr('class');
+					
+					if (engagement) {
+						$(this).addClass("engagement").css({"background-color": "#820000", "border-color": "#820000"});
+
+						var audioElement = document.createElement('audio');
+					        audioElement.setAttribute('src', 'sounds/alarm-sound.wav');
+					        audioElement.setAttribute('autoplay', 'autoplay');
+					}
+
+					$(this).toggleClass("active");
+				});
+			}
+			fleetPath();
 
     	}
     	GenerateSystem();
@@ -456,7 +530,7 @@ $(document).ready(function(){
     		var itemPositions = $(this).position();
     		var ringCurcum = (itemPositions.left * 2) + itemWidth;
     		
-    		$("#system-map").prepend("<div class='system-ring' style='width:" + ringCurcum + "px; height:"+ ringCurcum + "px; top: -" + ((ringCurcum / 2) -224) +"px; left: -" + (ringCurcum / 2) + "px; border-radius:" + ringCurcum + "px;'></div>");
+    		$("#system-map").prepend("<div class='system-ring' style='position: absolute; width:" + ringCurcum + "px; height:"+ ringCurcum + "px; top: -" + ((ringCurcum / 2) -224) +"px; left: -" + (ringCurcum / 2) + "px; border-radius:" + ringCurcum + "px;'></div>");
     	});
 
     });

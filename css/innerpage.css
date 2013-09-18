@@ -738,7 +738,7 @@ footer {
     background-color: #000;
     background-image: url("../images/graphic-jump-background.png");
     background-position: center;
-    height: 200px;
+    height: 80px;
     width: 100%;
     z-index: 100;
     cursor: pointer;
@@ -748,7 +748,7 @@ footer {
 #system-jump p {
     font-family: Orbitron, sans-serif;
     font-size: 40pt;
-    padding-top: 140px;
+    padding-top: 20px;
     color: #235f84;
     text-transform: uppercase;;
     text-align: center;
@@ -758,13 +758,23 @@ footer {
     color: #3fa9f5;
 }
 
+#system-hostility {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    color: #ff7f00;
+    z-index: 1001;
+}
+
+#system-hostility i {
+    color: #ff7f00;
+    padding-right: 4px;
+}
+
 #system-map {
-    background-image: url("../images/starscape-repeatable.png");
-    background-position: center;
-    width: 2000px;
-    height: 350px;
-    padding-top: 100px;
-    padding-bottom: 1400px;
+    background-color: #000;
+    height: 450px;
+    width: 1425px;
 }
 
 #system-map div {
@@ -773,19 +783,20 @@ footer {
 
 /*SYSTEM MAP*/
 #system-map .gravity-well {
+    margin-top: 100px;
     left: -125px;
     width: 250px;
     height: 250px;
     border-radius: 220px;
     margin-right: 0px;
-    background: rgb(0,0,0); /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%, rgba(69,72,77,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(69,72,77,1))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: rgb(0,0,0);
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%, rgba(69,72,77,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(69,72,77,1)));
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%);
+    background: radial-gradient(ellipse at center,  rgba(0,0,0,1) 0%,rgba(69,72,77,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=1 );
 }
 
 #system-map .gravity-well p {
@@ -801,14 +812,14 @@ footer {
     width: 200px;
     height: 200px;
     border-radius: 200px;
-    background: rgb(255,127,4); /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(255,127,4,1) 0%, rgba(232,55,55,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,127,4,1)), color-stop(100%,rgba(232,55,55,1))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,127,4,1) 0%,rgba(232,55,55,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  rgba(255,127,4,1) 0%,rgba(232,55,55,1) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  rgba(255,127,4,1) 0%,rgba(232,55,55,1) 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  rgba(255,127,4,1) 0%,rgba(232,55,55,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7f04', endColorstr='#e83737',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: rgb(255,127,4);
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(255,127,4,1) 0%, rgba(232,55,55,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,127,4,1)), color-stop(100%,rgba(232,55,55,1)));
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,127,4,1) 0%,rgba(232,55,55,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover,  rgba(255,127,4,1) 0%,rgba(232,55,55,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(255,127,4,1) 0%,rgba(232,55,55,1) 100%);
+    background: radial-gradient(ellipse at center,  rgba(255,127,4,1) 0%,rgba(232,55,55,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7f04', endColorstr='#e83737',GradientType=1 );
 }
 
 #system-map .gravity-well .star p {
@@ -825,7 +836,7 @@ footer {
     background-color: #666;
     border-radius: 20px;
     margin-right: 110px;
-    margin-top: 120px;
+    margin-top: 220px;
 }
 
 #system-map .osize-small p {
@@ -841,7 +852,7 @@ footer {
     background-color: #666;
     border-radius: 60px;
     margin-right: 110px;
-    margin-top: 110px;
+    margin-top: 210px;
 }
 
 #system-map .osize-medium p {
@@ -857,7 +868,7 @@ footer {
     background-color: #666;
     border-radius: 100px;
     margin-right: 110px;
-    margin-top: 105px;
+    margin-top: 205px;
 }
 
 #system-map .osize-large p {
@@ -873,7 +884,7 @@ footer {
     background-color: #666;
     border-radius: 140px;
     margin-right: 110px;
-    margin-top: 95px;
+    margin-top: 195px;
 }
 
 #system-map .osize-huge p {
@@ -884,7 +895,7 @@ footer {
 }
 
 /*ORBIT RINGS*/
-.system-ring {
+#system-map .system-ring {
     position: absolute;
     width: 300px;
     height: 300px;
@@ -892,9 +903,61 @@ footer {
     border: 1px solid #235f84;
 }
 
+/*SYSTEM GRID*/
+#system-grid {
+    position: absolute;
+    list-style-type: none;
+    height: 450px;
+}
+
+#system-grid li {
+    list-style-type: none;
+    margin: 0px;
+    float: left;
+    border-top: 1px solid #163b49;
+    border-right: 1px solid #163b49;
+    cursor: crosshair;
+}
+
+#system-grid li h5 {
+    padding-left: 2px;
+    color: #163b49;
+}
+
+#system-grid li h4 {
+    font-size: 0pt;
+}
+
+#system-grid li.active h4 {
+    display: block !important;
+    color: #000 !important;
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 22pt !important;
+    padding-top: 12px !important;
+}
+
+#system-grid li.active h4 i {
+    padding-right: 4px !important;
+}
+
+#system-grid li.enagement {
+    background-color: #ba0404 !important;
+    border-color: #ba0404 !important;
+}
+
+#system-grid li.active {
+    background-color: #163b49;
+}
+
+#system-grid li.active h5 {
+    color: #000;
+}
+
 /*FOOTER*/
 #footer {
     background-color: #000;
-    height: 200px;
+    height: 1000px;
+    border-top: 1px solid #163b49;
 
 }
