@@ -1,49 +1,102 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/home.css">
-            <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-            <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500,900,700|Geo:400,400italic|Nunito:400,300,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/innerpage.css">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script type="text/javascript" src="js/home.js"></script>
-        <title>Heavy Steel</title>
+        <script type="text/javascript" src="js/default.js"></script>
+        <title>Online Portfolio</title>
     </head>
     <body>
-        <section id="introduction-main">
-            <h1>HEAVY STEEL</h1>
+        <div id="face-card" class="css-transitions hidden">
+            <img src="images/mtdegoes.png" alt="Matthew T De Goes">
+        </div>
+        <header class="css-transitions">
+            <section class="holder css-transitions">
+                <h1 class="css-transitions"><span>DG</span> De Goes Portfolio</h1>
+            </section>
+        </header>
+        <section class="holder first-holder">
+            <div class="two-third-left">
+                <h1>Welcome to mtdegoes.github.io</h1>
+                <p>Here you'll find the online portfolio for Matthew De Goes, Web & Graphic Designer and Developer. Please take a look around and <a href="mailto:mtdegoes@gmail.com">contact me</a> with any questions.</p>
+            </div>
+            <div class="one-third-left js-clear-float">
+                <a id="slide-face" class="blue-btn full-btn effect-recess css-transitions" href="#">Want a Face for the Name?</a>
+            </div>
         </section>
-        <section id="nav-menu"><a class="blue-background" href="system-jump.html"><p>System Jump</p></a></section>
-        <section class="holder">
-            <div id="ship-selector">
-                <div class="two-columns">
-                    <div class="padding-20">
-                        <h2>Earth Protectorate</h2>
-                        <ul>
-                            <li><a class="epheavycorvette effect-recess" href="epheavy-corvette.html">Heavy Corvette</a></li>
-                            <li><a class="epblockaderunner effect-recess" href="epblockade-runner.html">Blockade Runner</a></li>
-                            <li><a class="epsupporthulk effect-recess" href="epsupport-hulk.html">Support Hulk</a></li>
-                            <li><a class="epdestroyer effect-recess" href="epdestroyer.html">Destroyer</a></li>
-                            <li class="js-clear-float"><a class="epbattleship effect-recess" href="epbattleship.html">Battleship</a></li>
-                        </ul>
+        <section class="holder body-section">
+            <div class="box-frame effect-recess css-transitions">
+                <div class="box-slide css-transitions">
+                    <div class="box-slide-half">
+                        <p>PowerPoint/Keynote, Illustrator, Photoshop, InDesign, WordPress, Joomla, IContact, Survey Monkey, Mail Chimp, Pardot</p>
                     </div>
-                </div>
-                <div class="two-columns js-clear-float">
-                    <div class="padding-20">
-                        <h2>Immortal Empire</h2>
-                        <ul>
-                            <li><a class="iemediumcorvette effect-recess" href="iemedium-corvette.html">Medium Corvette</a></li>
-                            <li><a class="iemediumfrigate effect-recess" href="iemedium-frigate.html">Medium Frigate</a></li>
-                            <li><a class="ieheavyfrigate effect-recess" href="ieheavy-frigate.html">Heavy Frigate</a></li>
-                            <li><a class="iesupporthulk effect-recess" href="iesupport-hulk.html">Support Hulk</a></li>
-                            <li class="js-clear-float"><a class="iedreadnought effect-recess" href="iedreadnought.html">Dreadnought</a></li>
-                        </ul>
+                    <div class="box-slide-half">
+                        <i class="fa fa-rocket"></i>
+                        <h1>Graphic Design</h1>
                     </div>
                 </div>
             </div>
-            <div id="random-generator">
-                <a id="roll-dice" class="glass-white min-shadow effect-popup css-transitions" href="#"><i class="icon-group"></i> Roll</a>
-                <p id="results-field"></p>
+            <div class="box-frame  effect-recess css-transitions">
+                <div class="box-slide css-transitions">
+                    <div class="box-slide-half">
+                        <p>HTML5, CSS3, SASS, Javascript, JQuery, Bootstrap, FontAwesome</p>
+                    </div>
+                    <div class="box-slide-half">
+                        <i class="fa fa-angle-left"></i>
+                        <h1>Web Developer</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="box-frame effect-recess css-transitions">
+                <div class="box-slide css-transitions">
+                    <div class="box-slide-half">
+                        <p>Partly hobby, partly profession, see a gallery online <a href="http://mtdegoes.deviantart.com/gallery/">here</a></p>
+                    </div>
+                    <div class="box-slide-half">
+                        <i class="fa fa-coffee"></i>
+                        <h1>Illustration</h1>
+                    </div>
+                </div>
             </div>
         </section>
+        <section class="holder body-section">
+            <h1>Visual Portfolio</h1>
+            <p>Here are a few examples of previous projects I've worked on. The examples include Advertisements, Web Pages, Online Interactive Games, Promotional Products, Logo Designs and more...</p>
+            <div class="image-slider">
+                <div class="slider-left">
+                    <a class="button-sm-round css-transitions" href="#"><i class="fa fa-angle-left"></i></a>
+                </div>
+                <div class="slider-frame">
+                    <div class="slider">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slider-right js-clear-float">
+                    <a class="button-sm-round css-transitions" href="#"><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </section>
+        <section class="holder body-section contact">
+            <h1>Contact Me</h1>
+            <ul>
+                <li></li>
+                <li><a href="mailto:mtdegoes@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li><a href="http://www.linkedin.com/in/mtdegoes/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li></li>
+                <li class="js-clear-float"></li>
+            </ul>
+        </section>
+        <footer>
+            <section class="holder">
+                <p>Copyright 2013 Matthew De Goes</p>
+            </section>
+        </footer>
     </body>
 </html>
