@@ -1,39 +1,81 @@
----
-layout: default
-title: Orbotix Sphero Training Site
----
-
-{% for post in site.posts reversed %}
-<div class="tutorial-section background-sphero-dark">
-    <div class="section-header">
-        <h1 class="primary-title">{{ post.title }}</h1>
-    </div>
-    {% if post.categories contains 'video' %}
-        <div class="section-body-video">
-	      	{{ post.content}}
-	    </div>
-    {% endif %}
-    {% if post.categories contains 'image' %}
-        <div class="section-body-image">
-	      	{{ post.content}}
-	    </div>
-    {% endif %}
-    {% if post.categories contains 'buttonimage' %}
-        <div class="section-body">
-            {{ post.content}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/innerpage.css">
+            <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/default.js"></script>
+        <title>New Site Testing</title>
+    </head>
+    <body>
+        <div id="interactive-div">
         </div>
-    {% endif %}
-    {% if post.categories contains 'textblock' %}
-        <div class="section-body-textblock">
-            <img class="menu-decoration" src="images/graphic-sph-ero.png" alt="sphero">
-	      	{{ post.content}}
-	    </div>
-    {% endif %}
-    {% if post.categories contains 'list' %}
-        <div class="section-body-list">
-	      	{{ post.content}}
-	    </div>
-    {% endif %}
-</div>
-<div class="tutorial-divider"></div>
-{% endfor %}
+        <header>
+            <section class="holder">
+                <h1>DG</h1>
+                <h2>De Goes</h2>
+                <!--<ul id="header-menu">
+                    <li>
+                        <a href="#link-test" class="effect-recess css-transitions">Smooth Scroll Test</a>
+                    </li>
+                </ul>-->
+            </section>
+        </header>
+        <section class="holder first-holder">
+            <h1>Matthew De Goes</h1>
+            <h4>Graphic Designer</h4>
+            <h4>Web Developer</h4>
+            <h4>Artist</h4>
+        </section>
+        <section class="holder">
+            <div class="box-frame effect-recess css-transitions">
+                <div class="box-slide css-transitions">
+                    <div class="box-slide-half">
+                        
+                    </div>
+                    <div class="box-slide-half">
+                        <h1>Artwork 1</h1>
+                    </div>
+                </div>
+            </div>
+            <h1>Buttons</h1>
+            <p>This is the section of this page designated for buttons. Below you will find two sections, one for rounded buttons and one for rectangular.</p>
+            <h2>Rounded Buttons</h2>
+            <a class="button-sm-round css-transitions" href=""><i class="icon-html5"></i></a>
+            <a class="button-md-round css-transitions" href=""><i class="icon-cog"></i></a>
+            <h2>Square Buttons & For Columns</h2>
+            <div class="four-columns">
+                <p>This button is small square and features the 'effect-recess' which easily allows you to add a suble submerged effect.</p>
+                <a class="button-sm effect-recess css-transitions" href="">This is a test</a>
+            </div>
+            <div class="four-columns">
+                <p>This button is small square and features the 'effect-popup' which easily allows you to add a suble raised effect.</p>
+                <a class="button-sm effect-popup css-transitions" href="">This is a test</a>
+            </div>
+            <div class="four-columns">
+                <p>Ditto but medium.</p>
+                <a class="button-md effect-recess css-transitions" href="">This is a test</a>
+            </div>
+            <div class="four-columns js-clear-float">
+                <p>Ditto but medium.</p>
+                <a id="interactive-start" class="button-md effect-popup css-transitions" href="">This is a test</a>
+            </div>
+            <ul id="item-menu">
+                <li class="css-transitions"></li>
+                <li class="css-transitions"></li>
+                <li class="css-transitions"></li>
+                <li class="css-transitions"></li>
+                <li class="css-transitions"></li>
+                <li class="css-transitions"></li>
+                <li class="css-transitions"></li>
+                <li class="css-transitions"></li>
+                <li class="css-transitions js-clear-float"></li>
+            </ul>
+        </section>
+        <footer>
+            <section class="holder">
+                
+            </section>
+        </footer>
+    </body>
+</html>
