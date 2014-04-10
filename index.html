@@ -1,0 +1,39 @@
+---
+layout: default
+title: Orbotix Sphero Training Site
+---
+
+{% for post in site.posts reversed %}
+<div class="tutorial-section background-sphero-dark">
+    <div class="section-header">
+        <h1 class="primary-title">{{ post.title }}</h1>
+    </div>
+    {% if post.categories contains 'video' %}
+        <div class="section-body-video">
+	      	{{ post.content}}
+	    </div>
+    {% endif %}
+    {% if post.categories contains 'image' %}
+        <div class="section-body-image">
+	      	{{ post.content}}
+	    </div>
+    {% endif %}
+    {% if post.categories contains 'buttonimage' %}
+        <div class="section-body">
+            {{ post.content}}
+        </div>
+    {% endif %}
+    {% if post.categories contains 'textblock' %}
+        <div class="section-body-textblock">
+            <img class="menu-decoration" src="images/graphic-sph-ero.png" alt="sphero">
+	      	{{ post.content}}
+	    </div>
+    {% endif %}
+    {% if post.categories contains 'list' %}
+        <div class="section-body-list">
+	      	{{ post.content}}
+	    </div>
+    {% endif %}
+</div>
+<div class="tutorial-divider"></div>
+{% endfor %}
