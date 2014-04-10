@@ -7,5 +7,5 @@ video_url: http://www.youtube.com/embed/ZaR4X2iJo6M
 ---
 
 {% if page.video_url %}
-<iframe src="{{ page.video_url }}?&rel=0&showinfo=0&autohide=1&hd=1&wmode=transparent" frameborder="0" ></iframe>
+<iframe src="{{ page.video_url }}" frameborder="0" ></iframe>
 {% endif %}
