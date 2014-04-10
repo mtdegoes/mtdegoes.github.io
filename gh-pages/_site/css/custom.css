@@ -1,0 +1,423 @@
+/*REPEAT ELEMENTS
+-----------------*/
+* {
+	
+}
+
+body {
+	background-color: #00628A;
+}
+
+/*FONT SIZE*/
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'montserrat', sans-serif;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 1.6em;
+}
+
+h3 {
+	font-size: 1.4em;
+}
+
+h4 {
+	font-size: 1.2em;
+}
+
+h5 {
+	font-size: 1.0em;
+}
+
+h6 {
+	font-size: 0.8em;
+}
+
+p {
+	font-size: 1.0em;
+}
+
+p, li {
+	font-family: raleway, sans-serif;
+}
+
+pre {
+	font-family: monospace;
+}
+
+/*FONT COLOR
+-----------------*/
+
+
+/*BODY SECTIONS
+-----------------*/
+/*BUTTONS
+-----------------*/
+
+
+/*DEFAULTS*/
+
+
+/*HEADER
+-----------------*/
+
+
+/*MINI
+-----------------*/
+
+
+/*BODY
+-----------------*/
+.background-sphero-dark {
+	background: url("../images/background-repeatable-sphero-dark.png") no-repeat center right;
+	background-size: 30%;
+}
+
+.body-section {
+	
+}
+
+.body-section .section-header .primary-title {
+	padding-top: .5em;
+	font-size: 5em;
+	font-weight: bold;
+	line-height: 0.9em;
+}
+
+.body-section .section-header .primary-title span {
+	display: block;
+	color: #fff;
+	padding-left: 20%;
+}
+
+.body-section .left-menu {
+	position: fixed;
+	width: 320px;
+	height: 100%;
+	background-color: #BBD431;
+	z-index: 2;
+}
+
+.primary-logo {
+	width: 80%;
+	padding: 10% 0% 0% 10%;
+}
+
+.curved-edge {
+	position: fixed;
+	height: 100%;
+	left: 320px;
+	z-index: 2;	
+}
+
+.curved-edge img {
+	height: 100%;
+}
+
+.graphic-reward-item {
+	-webkit-backface-visibility: hidden;
+}
+
+.graphic-reward-item img {
+	width: 80%;
+	padding: 0px 0% 0% 10%;
+	transform:rotate(-10deg);
+	-ms-transform:rotate(-10deg); /* IE 9 */
+	-webkit-transform:rotate(-10deg); /* Opera, Chrome, and Safari */
+	-webkit-backface-visibility: hidden;
+}
+
+/*TUTORIAL MENU*/
+.tutorial-navmenu {
+	list-style-type: none;
+	position: absolute;
+	bottom: 20px;
+	left: 40px;
+	background: rgba(187, 212, 49, 0.8);
+}
+
+.tutorial-navmenu li {
+	margin-top: 0px;
+}
+
+.tutorial-navmenu .pointer {
+	width: 40px;
+	position: absolute;
+	top: -25px;
+	left: -25px;
+	z-index: 5;
+	display: none;
+	transform:rotate(-45deg);
+	-ms-transform:rotate(-45deg); /* IE 9 */
+	-webkit-transform:rotate(-45deg); /* Opera, Chrome, and Safari */
+}
+
+.tutorial-navmenu a {
+	display: block;
+	padding: 6px 10px 6px 10px;
+	font-size: 1.2em;
+	font-family: montserrat, sans-serif;
+	color: #2D330C;
+	text-decoration: none;
+	border-radius: 1.6em;
+	transition: .5s;
+    -webkit-transition: .5s;
+}
+
+.tutorial-navmenu a:hover, .tutorial-navmenu a.active {
+	color: #000;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.tutorial-navmenu a:hover, .tutorial-navmenu a.active .pointer {
+	display: block;
+}
+
+.body-section #tutorials-container {
+	background-color: #0081C9;
+}
+
+/*HEADER MENU*/
+.tutorial-headmenu {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	list-style-type: none;
+	z-index: 10;
+}
+
+.tutorial-headmenu li {
+	float: right;
+	margin: 0px;
+}
+
+.tutorial-headmenu a {
+	display: block;
+	text-decoration: none;
+	color: #002D40;
+	height: 26px;
+	line-height: 26px;
+	border-radius: 26px;
+	padding: 0px 10px;
+}
+
+.tutorial-headmenu a:hover {
+	text-decoration: none;
+	color: #0093CF;
+	background-color: #002D40;
+}
+
+#tutorials-container .tutorial-section {
+	width: 60%;
+	padding-left: 35%;
+	padding-right: 5%;
+}
+
+#tutorials-container .tutorial-divider {
+	height: 6px;
+	background: rgb(0,129,201); /* Old browsers */
+	background: rgb(0,81,128); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(0,81,128,1) 0%, rgba(0,129,201,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,81,128,1)), color-stop(100%,rgba(0,129,201,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,81,128,1) 0%,rgba(0,129,201,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,81,128,1) 0%,rgba(0,129,201,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,81,128,1) 0%,rgba(0,129,201,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,81,128,1) 0%,rgba(0,129,201,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005180', endColorstr='#0081c9',GradientType=0 ); /* IE6-9 */
+}
+
+#tutorials-container .section-header {
+	
+}
+
+/*BODY SECTION*/
+#tutorials-container .section-body {
+	height: 60%;
+}
+
+/*BODY SECTION VIDEO*/
+#tutorials-container .section-body-video {
+	height: 0;
+	padding-bottom: 56%;
+	margin: 30px 0px;
+}
+
+#tutorials-container .section-body-video iframe {
+	width: 100%;
+	height: 100%;
+}
+/*BODY SECTION BUTTONS*/
+#tutorials-container .section-body-buttons {
+	margin: 50px 0px 30px 0px;
+}
+
+#tutorials-container .section-body-buttons a {
+	background-color: #00354C;
+	float: left;
+	height: 80px;
+	border-radius: 10px;
+	width: 45%;
+	margin: 0% 5% 0% 0%;
+	margin-right: ;
+	display: block;
+	font-family: montserrat, sans-serif;
+	text-decoration: none;
+	color: #fff;
+}
+
+#tutorials-container .section-body-buttons a.last {
+	margin-right: 0px;
+}
+
+#tutorials-container .section-body-buttons a i {
+	padding-top: 18px;
+	padding-left: 20px;
+	float: left;
+	color: #0081C9;
+	font-size: 3em;
+}
+
+#tutorials-container .section-body-buttons a p {
+	padding-top: 22px;
+	left: 20px;
+	float: left;
+	font-family: raleway, sans-serif;
+	font-size: 2em;
+}
+
+#tutorials-container .section-body-buttons a p span {
+	font-family: raleway, sans-serif;
+	font-size: 0.4em;
+	line-height: 0.4em;
+	display: block;
+}
+/*BODY SECTION LIST*/
+#tutorials-container .section-body-list {
+	margin: 30px 0px;
+}
+
+#tutorials-container .section-body-list h4 {
+	background-color: #00354C;
+	color: #0081C9;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 40px;
+	padding-left: 20px;
+	font-family: montserrat, sans-serif;
+}
+
+#tutorials-container .section-body-list p, #tutorials-container .section-body-list ol li {
+	font-family: raleway, sans-serif;
+	margin-left: 20px;
+	font-size: 1.0em;
+	color: #BBD431;
+	padding-top: 6px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+/*BODY SECTION IMAGE*/
+#tutorials-container .section-body-image img {
+	max-width: 110%;
+	left: -10%;
+	z-index: 100;
+	margin: 30px 0px 30px 0px; 
+}
+
+/*BLOCK TEXT BODY*/
+.menu-decoration {
+	position: absolute;
+	width: 260px;
+	top: 200px;
+	left: -60px;
+	z-index: 100;
+}
+
+/*CONTACT AND OTHER FRAMES*/
+#tutorials-container .container-frame {
+	width: 260px;
+	padding: 0px 20px 20px 20px;
+	border-radius: 10px;
+	position: fixed;
+	top: 20px;
+	right: 2500px;
+	z-index: 1;
+	background-color: #00354C;
+	transition: 1s;
+    -webkit-transition: 1s;
+}
+
+#tutorials-container .container-frame .fa-times {
+	color: #0081C9;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+#tutorials-container .container-frame h4 {
+	font-weight: normal;
+	color: #0081C9;
+	margin-top: 20px;
+}
+
+#tutorials-container .container-frame a {
+	font-family: raleway, sans-serif;
+	color: #fff;
+	font-size: 0.9em;
+}
+
+/*CUSTOM*/
+
+
+/*FOOTER
+-----------------*/
+footer p {
+	text-align: center;
+	color: #00354C;
+	font-family: montserrat, sans-serif;
+}
+
+/*RESPONSIVE DESIGN SECTION BY MAX | MOBILE-400 | TABLET-800*/
+@media only screen and (max-width: 420px) {
+    .left-menu {
+		display: none;
+	}
+
+	.body-section #tutorials-container {
+		padding-left: 0px;
+		margin-right: auto;
+		margin-left: auto;
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.body-section .left-menu {
+		width: 20%;
+	}
+	
+	.tutorial-navmenu {
+		left: 6px;
+		bottom: 6px;
+	}
+	
+	.tutorial-navmenu a {
+		font-size: 0.8em;
+	}
+
+	.curved-edge {
+		display: none;
+	}
+
+	.body-section #tutorials-container {
+		padding-left: 20%;
+		width: 80%;
+	}
+	
+}
