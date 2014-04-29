@@ -1,0 +1,96 @@
+/*FONT SIZING GENERAL*/
+h1 {
+    font-size: 26pt;
+}
+
+h2 {
+    font-size: 22pt;
+}
+
+h3 {
+    font-size: 18pt;
+}
+
+h4 {
+    font-size: 14pt;
+}
+
+h5 {
+    font-size: 12pt;
+}
+
+ul li, ol li {
+    font-size: 12pt;
+}
+
+p {
+    font-size: 12pt;
+}
+
+/*FONT PADDING*/
+/*P*/
+p + p {
+    margin-top: 20px;
+}
+
+p + h1, p + h2, p + h3, p + h4, p + h5 {
+    margin-top: 20px;
+}
+
+p + ul, p + ol {
+    margin-top: 8px;
+}
+
+/*H*/
+h1 + h2, h2 + h3 {
+    margin-top: 14px;
+}
+
+h3 + h4 {
+    margin-top: 12px;
+}
+
+h4 + h5 {
+    margin-top: 8px;
+}
+
+h1 + p, h2 + p {
+    margin-top: 4px;
+}
+
+h3 + p, h4 + p, h5 + p {
+    margin-top: 0px;
+}
+
+/*UL*/
+h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul {
+    margin-top: 8px;
+}
+
+ul + h1, ul + h2, ul + h3, ul + h4, ul + h5, ul + p, ul + pre, ul + ul, ol + h1, ol + h2, ol + h3, ol + h4, ol + h5, ol + p, ol + pre, ol + ol {
+    margin-top: 30px;
+}
+
+/*LI*/
+li + li {
+    margin-top: 8px;
+}
+
+/*PRE*/
+h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, p + pre, pre + pre {
+    margin-top: 8px;
+}
+
+ul + pre, ol + pre {
+    margin-top: 24px;
+}
+
+pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + ol, pre + ul, pre + p {
+    margin-top: 30px;
+}
+
+/*FONT-SIZES*/
+p {
+    font-size: 12pt;
+    line-height: 1.4;
+}
