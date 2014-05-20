@@ -1,0 +1,46 @@
+/*REPEAT ELEMENTS
+-----------------*/
+* {
+	font-family: arial, sans-serif;
+}
+
+h1 {
+	font-size: 26px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 17px;	
+}
+
+h4 {
+	font-size: 14px;
+}
+
+h5 {
+	font-size: 11px;
+}
+
+h6 {
+	font-size: 9px;
+}
+
+p {
+	font-size: 11pt;
+}
+
+pre {
+	font-family: monospace;
+}
+
+/*HEADER
+-----------------*/
+
+/*BODY
+-----------------*/
+
+/*FOOTER
+-----------------*/
