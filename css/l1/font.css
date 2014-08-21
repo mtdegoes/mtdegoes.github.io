@@ -1,0 +1,127 @@
+/*GENERAL FONT SETTINGS*/
+h1 {
+    font-size: 2.1em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+ul li, ol li {
+    font-size: 1em;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+pre {
+    font-size: 0.9em;
+    font-family: monospace;
+}
+
+a {
+    font-size: 1.0em;
+}
+
+/*FONT PADDING*/
+/*P*/
+p + p {
+    margin-top: 1em;
+}
+
+p + h1, p + h2, p + h3, p + h4, p + h5 {
+    margin-top: 1em;
+}
+
+p + ul, p + ol {
+    margin-top: 1em;
+}
+
+/*H*/
+h1 + h2, h2 + h3, h3 + h4, h4 + h5 {
+    margin-top: 0.5em;
+}
+
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p {
+    margin-top: 0.5em;
+}
+
+/*UL*/
+h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul {
+    margin-top: 1em;
+}
+
+ul + h1, ul + h2, ul + h3, ul + h4, ul + h5, ul + p, ul + pre, ul + ul, ol + h1, ol + h2, ol + h3, ol + h4, ol + h5, ol + p, ol + pre, ol + ol {
+    margin-top: 1.5em;
+}
+
+/*LI*/
+li + li {
+    margin-top: 0.5em;
+}
+
+/*PRE*/
+h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, p + pre, pre + pre {
+    margin-top: 1em;
+}
+
+ul + pre, ol + pre {
+    margin-top: 1em;
+}
+
+pre + h1, pre + h2, pre + h3, pre + h4, pre + h5, pre + ol, pre + ul, pre + p {
+    margin-top: 1.5em;
+}
+
+/*RESPONSIVE DESIGN SECTION BY MAX | MOBILE-400 | TABLET-800*/
+@media only screen and (min-width: 1px) and (max-width: 400px) {
+    /*SCALE FONT AS PAGE SHRINKS*/
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 800px) {
+    /*SCALE FONT AS PAGE SHRINKS*/
+    h1 {
+        font-size: 1.7em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+}

@@ -1,0 +1,395 @@
+/*REPEAT ELEMENTS
+-----------------*/
+/*FONT-SIZES*/
+html {
+	font-family: arial, sans-serif;
+    font-size: 12pt;
+}
+
+body {
+	background-color: #ffffff;
+}
+
+.light-bottom-border {
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.dark-bottom-border {
+	border-bottom: 1px solid #1a1a1a;
+}
+
+.l1-tip-active:hover .l1-tip {
+	opacity: 1.0;
+}
+
+.l1-tip {
+	opacity: 0.0;
+	width: 96%;
+	margin: 0px auto;
+	text-align: center;
+	padding-bottom: 20px;
+	transition: .5s;
+    -webkit-transition: .5s;
+}
+
+.l1-tip span {
+	font-weight: bold;
+}
+
+.background-black-stripped {
+	color: #ffffff;
+	background-color: #000000;
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,0.1) 35px, rgba(255,255,255,0.1) 70px);
+}
+
+.background-black {
+	color: #ffffff;
+	background-color: #000000;
+}
+
+.l1-auto-overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 1000;
+}
+
+.l1-auto-overlay .l1-auto-holder {
+	width: 90%;
+	max-width: 800px;
+	top: 100px;
+	margin: 0px auto;
+}
+
+.l1-auto-overlay .l1-auto-holder .l1-auto-height img {
+	display: block;
+	margin: 0px auto;
+	width: 100%;
+	max-width: 600px;
+}
+
+/*HEADER
+-----------------*/
+.l1-fixed-header {
+    height: 100px; /*SHOULD BE THE SAME AS SETTING 1 \/\/ BELOW*/
+}
+
+.l1-fixed-header + * {
+    padding-top: 100px; /*SHOULD BE THE SAME AS SETTING 1 \/\/ ABOVE*/
+}
+/*SETTING FIXED HEADER HEIGHT (OPTIONAL)*/
+header {
+	background-color: #f2f2f2;
+	z-index: 1;
+}
+
+header h1 {
+	letter-spacing: 1px;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 0px 2px #ffffff;
+	top: 10px;
+}
+
+header h1 a {
+	text-decoration: none;
+}
+
+header h1 span {
+	font-size: 0.75em;
+	text-transform: lowercase;
+	color: #1a1a1a;
+	top: -12px;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1.0;}
+}
+
+/* Standard syntax */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1.0;}
+}
+
+header h1 span:first-child {
+	padding-right: 2%;
+	-webkit-animation: fadeIn 2s;
+    animation: fadeIn 2s;
+}
+
+header h1 span:last-child {
+	padding-left: 2%;
+	-webkit-animation: fadeIn 4s;
+    animation: fadeIn 4s;
+}
+
+.scroll-reminder {
+	position: absolute;
+	bottom: 0px;
+	left: 20px;
+	background-color: #1a1a1a;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.scroll-reminder i {
+	font-size: 20pt;
+	padding: 10px;
+	color: #ffffff;
+}
+
+.scroll-reminder i p {
+	position: absolute;
+	bottom: 4px;
+	left: 56px;
+	color: #000000;
+	font-size: 0.5em;
+	width: 300px;
+	opacity: 0.0;
+}
+
+.scroll-reminder i:hover p {
+	opacity: 1.0;
+}
+
+.contact-reminder {
+	position: absolute;
+	bottom: 0px;
+	right: 20px;
+	background-color: #1a1a1a;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.contact-reminder i {
+	font-size: 20pt;
+	padding: 10px;
+	color: #ffffff;
+}
+
+.contact-reminder i p {
+	text-align: right;
+	position: absolute;
+	bottom: 4px;
+	right: 56px;
+	color: #000000;
+	font-size: 0.5em;
+	width: 300px;
+	opacity: 0.0;
+}
+
+.contact-reminder i:hover p {
+	opacity: 1.0;
+}
+
+.fun-field {
+	position: absolute;
+	bottom: 10%;
+	left: 0px;
+	width: 100%;
+	font-size: 0.6em;
+}
+
+.fun-field ul {
+	list-style-type: none;
+}
+
+.fun-field ul li {
+	text-align: center;
+	color: #d8d8d8;
+}
+
+/*BODY
+-----------------*/
+.personal-image {
+	display: block;
+	max-width: 80%;
+	margin: 20px auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.visual-sector p {
+	height: 1.2em;
+	overflow: hidden;
+	cursor: pointer;
+	border-right: 1px solid #3eaedb;
+}
+
+.visual-sector p:hover span {
+	left: 0em;
+}
+
+.visual-sector p:hover  {
+	color: #fff;
+}
+
+.visual-sector span {
+	position: absolute;
+	left: -105%;
+	top: 0px;
+	background-color: #3eaedb;
+	height: 1.2em;
+	display: block;
+	transition: .5s;
+    -webkit-transition: .5s;
+}
+
+.visual-sector .p100 {
+	width: 100%;
+}
+
+.visual-sector .p90 {
+	width: 90%;
+}
+
+.visual-sector .p80 {
+	width: 80%;
+}
+
+.visual-sector .p70 {
+	width: 70%;
+}
+
+.visual-sector .p60 {
+	width: 60%;
+}
+
+.visual-sector .p50 {
+	width: 50%;
+}
+
+.visual-sector .p40 {
+	width: 40%;
+}
+
+.visual-sector .p30 {
+	width: 30%;
+}
+
+.visual-sector .p20 {
+	width: 20%;
+}
+
+.visual-sector .p10 {
+	width: 10%;
+}
+
+#portfolio-gallery {
+	padding-top: 1em;
+	width: 100%;
+	-webkit-column-count: 4;
+   	-webkit-column-gap:   2px;
+   	-moz-column-count:    4;
+   	-moz-column-gap:      2px;
+   	column-count:         4;
+   	column-gap:           2px;
+}
+
+#portfolio-gallery .gallery img {
+	display: block;
+	width: 100%;
+	padding-bottom: 2px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	border: solid 10px #000000;
+}
+
+#portfolio-gallery .gallery img:hover {
+	border: solid 10px rgba(0, 213, 255, 0.2);
+	cursor: pointer;
+}
+
+#portfolio-gallery .left {
+	
+}
+
+#portfolio-gallery .right {
+	
+}
+
+.contact-section i {
+	color: #000000;
+	font-size: 4em;
+}
+
+.contact-section a {
+	text-align: center;
+	width: 100%;
+	display: block;
+}
+
+.focal-point {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+.focal-point .fa-male {
+	position: absolute;
+	font-size: 40px;
+	top: 0px;
+	left: 24px;
+}
+
+.focal-point .fa-briefcase {
+	position: absolute;
+	font-size: 12px;
+	top: 28px;
+	left: 16px;
+	text-shadow: 0px 2px #ffffff;
+}
+
+/*FOOTER
+-----------------*/
+footer p {
+	text-align: center;
+	margin: 20px 0px;
+	font-size: 0.8em;
+	color: #cccccc;
+}
+
+/*RESPONSIVE DESIGN SECTION BY MAX | MOBILE-400 | TABLET-800*/
+@media only screen and (max-width: 400px) {
+    .l1-fixed-header + * {
+		padding-top: 0px; /*RESET FIXED HEADER PADDING*/
+	}
+
+	#portfolio-gallery {
+		padding-top: 1em;
+		width: 100%;
+		-webkit-column-count: 2 !important;
+	   	-webkit-column-gap:   2px !important;
+	   	-moz-column-count:    2 !important;
+	   	-moz-column-gap:      2px !important;
+	   	column-count:         2 !important;
+	   	column-gap:           2px !important;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+    header h1 span {
+		top: 0px;
+		padding: 1em 0em !important;
+		display: block;
+	}
+
+	#portfolio-gallery {
+		padding-top: 1em;
+		width: 100%;
+		-webkit-column-count: 3;
+	   	-webkit-column-gap:   2px;
+	   	-moz-column-count:    3;
+	   	-moz-column-gap:      2px;
+	   	column-count:         3;
+	   	column-gap:           2px;
+	}
+}
