@@ -1,0 +1,403 @@
+/*REPEAT ELEMENTS
+-----------------*/
+/*FONT-SIZES*/
+html {
+	font-family: arial, sans-serif;
+    font-size: 12pt;
+}
+
+/*HEADER
+-----------------*/
+.l1-fixed-header {
+    height: 100px; /*SHOULD BE THE SAME AS SETTING 1 \/\/ BELOW*/
+}
+
+.l1-fixed-header + * {
+    padding-top: 100px; /*SHOULD BE THE SAME AS SETTING 1 \/\/ ABOVE*/
+}
+/*SETTING FIXED HEADER HEIGHT (OPTIONAL)*/
+header {
+	background-color: #000000;
+}
+
+header h1 {
+	font-family: Orbitron, sans-serif;
+	color: #3fa9f5;
+	text-align: center;
+	padding-bottom: 0.2em;
+}
+
+header h4 {
+	font-family: Orbitron, sans-serif;
+	color: #666666;
+	text-align: center;
+}
+
+body {
+	background-color: #000000;
+}
+
+.vessel-index {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 1;
+}
+
+.vessel-index ul {
+	list-style-type: none;
+}
+
+.vessel-index ul li img {
+	max-width: 200px;
+}
+
+.vessel-index ul li p {
+	position: absolute;
+	top: 1em;
+	width: 100%;
+	text-align: center;
+	color: #3fa9f5;
+}
+
+.vessel-index h4 {
+	font-size: 1.2em;
+	font-family: Abel, sans-serif;
+	border-right: 1px solid #235f8a;
+	border-bottom: 1px solid #235f8a;
+}
+
+.vessel-index .ie-ship-database, .vessel-index .ep-ship-database {
+	background-color: rgba(0, 0, 0, 0.8);
+	float: left;
+	width: 200px;
+	padding: 1em 1em;
+	margin-top: -22em;
+}
+
+.vessel-index .ie-ship-database {
+	margin-top: -349px;
+}
+
+.vessel-index .ep-ship-database {
+	margin-top: -419px;
+}
+
+.vessel-index .ie-ship-database:hover, .vessel-index .ep-ship-database:hover {
+	margin-top: 0em;
+}
+
+/*BODY
+-----------------*/
+.tactical-display {
+	background-color: #000;
+}
+
+.tactical-display h5 {
+	text-align: center;
+	font-family: Abel, sans-serif;
+	color: #808080;
+}
+
+.tactical-display .display-style {
+	text-align: center;
+	font-family: Aldrich, sans-serif;
+	color: #3fa9f5;
+}
+
+.tactical-display .display-style-alt {
+	position: absolute;
+	margin-top: -2em;
+	right: 0px;
+	text-align: center;
+	font-family: Aldrich, sans-serif;
+	color: #1f5378;
+}
+
+#ship-display {
+	background: url("../images/ship-background-alt.png"), #000;
+}
+
+.vessel-status h5 {
+	border-left: 1px solid #235f8a;
+	border-top: 1px solid #235f8a;
+	margin-top: 1.0em;
+	padding-top: 0.5em;
+}
+
+.vessel-status h5:hover {
+	border-left: 1px solid #3fa9f5;
+	border-top: 1px solid #3fa9f5;
+}
+
+.vessel-status i.fa {
+	
+}
+
+#system-messages {
+	height: 34px;
+	background-color: #141414;
+}
+
+.message-display {
+	padding-left: 20px;
+}
+
+#system-messages h5 {
+	font-family: Abel, sans-serif;
+	color: #f7931e;
+}
+
+#system-messages p {
+	margin-top: 0px;
+	font-family: Aldrich, sans-serif;
+	color: #808080;
+	font-size: 0.8em;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-webkit-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }	
+}
+
+.display-background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/graphic-scan-sliver.png");
+	background-repeat: repeat-y;
+	background-position: 0px 0px;
+	animation: animatedBackground 10s linear infinite;
+	-webkit-animation: animatedBackground 10s linear infinite;
+}
+
+.vessel {
+	padding: 1em 0px;
+}
+
+.vessel img {
+	width: 100%;
+	padding: 1em 0px;
+	opacity: 0.4;
+}
+
+.interceptor-assignment.small, .incoming-barrage.small, .vessel.small {
+	width: 100%;
+	max-width: 400px;
+	margin: 0px auto;
+}
+
+.interceptor-assignment.medium, .incoming-barrage.medium, .vessel.medium {
+	width: 100%;
+	max-width: 600px;
+	margin: 0px auto;
+}
+
+.interceptor-assignment.large, .incoming-barrage.large, .vessel.large {
+	width: 100%;
+	max-width: 800px;
+	margin: 0px auto;
+}
+
+.interceptor-assignment.xlarge, .incoming-barrage.xlarge, .vessel.xlarge {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0px auto;
+}
+
+.interceptor-assignment.colossal, .incoming-barrage.colossal, .vessel.colossal {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0px auto;
+}
+
+.vessel-stats {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.vessel-section {
+	float: left;
+	cursor: pointer;
+}
+
+.vessel-section.shields-active {
+	background-color: rgba(63, 169, 245, 0.3);
+}
+
+.vessel-section .vessel-systems {
+	opacity: 0.0;
+}
+
+.vessel-section .fa-bar-chart {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	color: #7ac943;
+	display: none;
+}
+
+.vessel-section.shields-active .fa-bar-chart {
+	display: block !important;
+}
+
+.vessel.six .vessel-section {
+	width: 16.66%;
+	height: 100%;
+}
+
+.vessel.five .vessel-section {
+	width: 20.00%;
+	height: 100%;
+}
+
+.vessel.four .vessel-section {
+	width: 25.00%;
+	height: 100%;
+}
+
+.vessel.three .vessel-section {
+	width: 33.33%;
+	height: 100%;
+}
+
+.vessel.two .vessel-section {
+	width: 50.00%;
+	height: 100%;
+}
+
+.vessel-section.damaged {
+	background-color: rgba(255, 29, 37, 0.1);
+}
+
+.vessel-section.inoperable {
+	background-color: rgba(255, 29, 37, 0.3) !important;
+}
+
+.control-missile-batteries {
+	padding-left: 1em;
+	position: absolute;
+	top: 1em;
+	background-color: #333333;
+	width: 200px;
+	color: #000;
+	z-index: 1;
+	cursor: pointer;
+	height: 26px;
+	line-height: 26px;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	opacity: 0.8;
+}
+
+.control-missile-batteries i {
+	font-size: 1.2em;
+}
+
+.control-missile-batteries.active {
+	background-color: #b80000;
+}
+
+.control-missile-batteries:hover {
+	opacity: 1.0;	
+}
+
+.interceptor-assignment {
+	height: 30px;
+}
+
+.incoming-barrage {
+	height: 30px;
+}
+
+#tactical {
+	background-color: #000;
+}
+
+#tactical .section {
+	float: left;
+}
+
+#tactical h5 {
+	font-family: Abel;
+	position: absolute;
+	top: 4px;
+	left: -160px;
+	width: 160px;
+	text-align: left;
+	color: #3079aa;
+}
+
+#tactical .section input {
+	background-color: #3079aa;
+	text-align: center;
+	display: block;
+	min-height: 30px;
+	margin: 0px auto;
+	color: #000000;
+	font-family: Orbitron, sans-serif;
+	font-size: 1.0em;
+}
+
+#tactical .section input::-webkit-inner-spin-button, #tactical .section input::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+	margin: 0px;
+}
+
+#tactical .section input:hover {
+	background-color: #3d97d3;
+}
+
+.fire-control {
+	background-color: #000;
+	padding-bottom: 4em;
+}
+
+.finalize-defense {
+	cursor: pointer;
+	width: 200px;
+	text-align: center;
+	background-color: #8cc63f;
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,0,0,.5) 35px, rgba(0,0,0,.5) 60px);
+	margin: 0px auto;
+	line-height: 30px;
+	height: 30px;
+	border-radius: 6px;
+	text-transform: uppercase;
+	display: none;
+}
+
+.end-turn {
+	cursor: pointer;
+	width: 200px;
+	text-align: center;
+	background-color: #a81318;
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,0,0,.5) 35px, rgba(0,0,0,.5) 60px);
+	margin: 0px auto;
+	line-height: 30px;
+	height: 30px;
+	border-radius: 6px;
+	text-transform: uppercase;
+}
+
+/*FOOTER
+-----------------*/
+
+/*RESPONSIVE DESIGN SECTION BY MAX | MOBILE-400 | TABLET-800*/
+@media only screen and (min-width: 1px) and (max-width: 400px) {
+    .l1-fixed-header + * {
+		padding-top: 0px; /*RESET FIXED HEADER PADDING*/
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 800px) {
+    
+}

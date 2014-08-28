@@ -1,0 +1,206 @@
+/*GENERAL SETTINGS \/\/\/\/\/\/ */
+* {
+    border: 0;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/*CSS TRANSITIONS AND ANIMATIONS*/
+.l1-transition-short {
+    transition: .5s;
+    -webkit-transition: .5s;
+}
+
+.l1-transition-med {
+    transition: .7s;
+    -webkit-transition: .7s;
+}
+
+.l1-transition-mlong {
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+
+/*CSS EFFECTS*/
+.l1-effect-popup:hover {
+    -moz-box-shadow: 0 0 6px 1px #000;
+    -webkit-box-shadow: 0 0 6px 1px #000;
+    box-shadow: 0 0 6px 1px #000;
+}
+
+.l1-effect-recess:hover {
+    -moz-box-shadow: inset 0 0 6px 1px #000;
+    -webkit-box-shadow: inset 0 0 6px 1px #000;
+    box-shadow: inset 0 0 6px 1px #000;
+}
+
+/*CSS GENERAL*/
+.l1-clear-float:after {
+    content:'';
+    display:block;
+    clear: both;
+}
+/*FIXED HEADER*/
+.l1-fixed-header {
+    position: fixed;
+}
+
+.l1-fixed-header + * {
+    
+}
+
+/*SECTIONS = PADDING TOP, COLUMNS = DIVISIONS WIDTH*/
+.l1-section-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.l1-section-40 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.l1-section-60 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.l1-section-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/*PAGE HOLDERS BY PX*/
+.l1-holder {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.l1-fixed-1400 {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.l1-fixed-1200 {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.l1-fixed-1000 {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.l1-fixed-800 {
+    width: 100%;
+    max-width: 800px;
+}
+
+.l1-fixed-600 {
+    width: 100%;
+    max-width: 600px;
+}
+
+/*GRID SPACING AND OPTIONS \/\/\/\/\/\/ */
+.l1-column {
+    float: left;
+}
+
+.l1-column-25 {
+    width: 24%;
+    padding-right: 1%;
+}
+
+.l1-column-33 {
+    width: 31%;
+    padding-right: 2%;
+}
+
+.l1-column-50 {
+    width: 48%;
+    padding-right: 4%;
+}
+
+.l1-column-50:nth-child(2) {
+    padding-right: 0px;
+}
+
+.l1-column-66 {
+    width: 64%;
+    padding-right: 2%;
+}
+
+.l1-column-75 {
+    width: 73%;
+    padding-right: 2%;
+}
+
+/*BUTTONS FOR PAGE \/\/\/\/\/\/ */
+.l1-button {
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.l1-button-sm {
+    width: 20%;
+    min-width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.0em;
+}
+
+.l1-button-md {
+    width: 30%;
+    min-width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.2em;
+}
+
+.l1-button-lg {
+    width: 40%;
+    min-width: 300px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+}
+
+.l1-button-xl {
+    width: 50%;
+    min-width: 400px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.6em;
+}
+
+.l1-button-black {
+    background-color: #000;
+    color: #fff;
+}
+
+/*RESPONSIVE DESIGN SECTION BY MAX | MOBILE-400 | TABLET-800*/
+@media only screen and (min-width: 1px) and (max-width: 400px) {
+    /*CLEAR FLOAT ON COLUMNS*/
+    .l1-column.l1-column-50, .l1-column.l1-column-66, .l1-column.l1-column-75, .l1-column.l1-column-33 {
+        clear: both;
+        width: auto;
+    }
+
+    /*RESET-FIX HEADER*/
+    .l1-fixed-header {
+        position: relative;
+    }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 800px) {
+    /*CLEAR FLOAT ON COLUMNS*/
+    .l1-column.l1-column-25 {
+        clear: both;
+        width: auto;
+    }
+}
