@@ -1,9 +1,12 @@
 $(document).ready(function(){
 
 	//SYSTEM POINTS
-	var missileCount = 2;
+	var missileCount = 3;
+		lightPlasmaOffset = 2;
 		heavyPlasmaOffset = 5,
+		lightMissileOffset = 1,
 		heavyMissileOffset = 3,
+		interceptorOffset = 1,
 		shieldOffset = 0.5,
 		hullValue = 0;
 
@@ -88,7 +91,7 @@ $(document).ready(function(){
 			var	activeLightMissiles = assessSystem(".active .system-lms"),
 				activeHeavyMissiles = assessSystem(".active .system-hms");
 
-			updateCC(".status-ms", activeLightMissiles + (activeHeavyMissiles * heavyMissileOffset));
+			updateCC(".status-ms", (activeLightMissiles * lightMissileOffset) + (activeHeavyMissiles * heavyMissileOffset));
 		} else {
 			updateCC(".status-ms", 0);
 		}
@@ -96,8 +99,8 @@ $(document).ready(function(){
 		//UPDATE CC/OTHER
 		updateCC(".status-sgenerators", activeSgenerators);
 		updateCC(".status-engines", activeEngines);
-		updateCC(".status-ps", (activeLightPlasmas + (activeHeavyPlasmas * heavyPlasmaOffset)));
-		updateCC(".status-aas", activeInterceptors);
+		updateCC(".status-ps", ((activeLightPlasmas * lightPlasmaOffset) + (activeHeavyPlasmas * heavyPlasmaOffset)));
+		updateCC(".status-aas", (activeInterceptors * interceptorOffset));
 		updateCC(".status-armor", activeArmor);
 		updateCC(".status-hull", activeHull);
 
