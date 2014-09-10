@@ -54,7 +54,6 @@ $(document).ready(function(){
 				if (systemCount >= 1){
 					totalCount = totalCount + systemCount;
 				} else {
-					console.log($(this).html());
 					$(this).parents(".vessel-section").removeClass("active");
 				}
 			});
@@ -257,7 +256,8 @@ $(document).ready(function(){
 			--missileCount;
 			if (missileCount == 0){
 				$(".status-ms").html("0");
-				$(".control-missile-batteries").remove();
+				$(".control-missile-batteries").fadeOut();
+				$(".control-missile-batteries").removeClass("active");
 				displayInfo("All missiles expended.")
 			}
 		}
@@ -267,7 +267,6 @@ $(document).ready(function(){
 	//END TURN
 	$(".end-turn").click(function(){
 		calculateDamage();
-
 	});
 
 });

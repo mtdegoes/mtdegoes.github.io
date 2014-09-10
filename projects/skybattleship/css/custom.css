@@ -49,16 +49,10 @@ body {
 	list-style-type: none;
 }
 
-.vessel-index ul li img {
-	max-width: 200px;
-}
-
-.vessel-index ul li p {
-	position: absolute;
-	top: 1em;
+.vessel-index ul li a {
 	width: 100%;
-	text-align: center;
 	color: #3fa9f5;
+	font-size: 0.8em;
 }
 
 .vessel-index h4 {
@@ -73,15 +67,14 @@ body {
 	float: left;
 	width: 200px;
 	padding: 1em 1em;
-	margin-top: -22em;
 }
 
 .vessel-index .ie-ship-database {
-	margin-top: -349px;
+	margin-top: -164px;
 }
 
 .vessel-index .ep-ship-database {
-	margin-top: -419px;
+	margin-top: -190px;
 }
 
 .vessel-index .ie-ship-database:hover, .vessel-index .ep-ship-database:hover {
