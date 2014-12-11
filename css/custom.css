@@ -30,17 +30,17 @@ header h5 span:last-child { padding-left: 1em; }
 #gort .gortion a .random-image { opacity: 0.25; -webkit-transition: 0.5s; transition: 0.5s; }
 #gort .gortion a .random-image:hover { opacity: 1.0; }
 #gort .gortion a.green { background: url("../images/graphic-icon-knight.png") no-repeat top right, #b6cc45; background-size: 20px; }
-#gort .gortion a.green:hover { border-right: 15px solid #c6de4b; }
+#gort .gortion a.green:hover { border-bottom: 15px solid #c6de4b; }
 #gort .gortion a.blue { background: url("../images/graphic-icon-knight.png") no-repeat top right, #54b8ff; background-size: 20px; }
-#gort .gortion a.blue:hover { border-right: 15px solid #80caff; }
+#gort .gortion a.blue:hover { border-bottom: 15px solid #80caff; }
 #gort .gortion a.purple { background: url("../images/graphic-icon-knight.png") no-repeat top right, #cf00cf; background-size: 20px; }
-#gort .gortion a.purple:hover { border-right: 15px solid #eb00eb; }
+#gort .gortion a.purple:hover { border-bottom: 15px solid #eb00eb; }
 #gort .gortion a.orange { background: url("../images/graphic-icon-knight.png") no-repeat top right, #ffa821; background-size: 20px; }
-#gort .gortion a.orange:hover { border-right: 15px solid #ffbc54; }
+#gort .gortion a.orange:hover { border-bottom: 15px solid #ffbc54; }
 #gort .gortion a.yellow { background: url("../images/graphic-icon-knight.png") no-repeat top right, #fce83a; background-size: 20px; }
-#gort .gortion a.yellow:hover { border-right: 15px solid #fced6a; }
+#gort .gortion a.yellow:hover { border-bottom: 15px solid #fced6a; }
 #gort .gortion a.red { background: url("../images/graphic-icon-knight.png") no-repeat top right, #ff3b43; background-size: 20px; }
-#gort .gortion a.red:hover { border-right: 15px solid #ff666c; }
+#gort .gortion a.red:hover { border-bottom: 15px solid #ff666c; }
 #gort .gortion a.grey { background: #262626; }
 
 #photo { text-align: center; padding-top: 60px; padding-bottom: 60px; background-color: #000000; }
