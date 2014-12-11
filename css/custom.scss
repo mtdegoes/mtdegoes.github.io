@@ -287,15 +287,15 @@ footer {
 		height: 1em;
 
     	&.blue {
-			background-color: $lBlue;
+			background: url("../images/graphic-repeatable-paint.png") repeat-x left, $lBlue;
 
 			.head {
-				background-color: $dBlue;
+				background-color:  $dBlue;
 			}
     	}
 
     	&.green {
-    		background-color: $lGreen;
+    		background: url("../images/graphic-repeatable-paint.png") repeat-x left, $lGreen;
 
 			.head {
 				background-color: $dGreen;
@@ -303,7 +303,7 @@ footer {
     	}
 
     	&.purple {
-			background-color: $lPurple;
+			background: url("../images/graphic-repeatable-paint.png") repeat-x left, $lPurple;
 
 			.head {
 				background-color: $dPurple;
@@ -311,7 +311,7 @@ footer {
     	}
 
     	&.yellow {
-			background-color: $lYellow;
+			background: url("../images/graphic-repeatable-paint.png") repeat-x left, $lYellow;
 
 			.head {
 				background-color: $dYellow;
@@ -319,7 +319,7 @@ footer {
     	}
 
     	&.orange {
-			background-color: $lOrange;
+			background: url("../images/graphic-repeatable-paint.png") repeat-x left, $lOrange;
 
 			.head {
 				background-color: $dOrange;
@@ -327,7 +327,7 @@ footer {
     	}
 
     	&.red {
-			background-color: $lRed;
+			background: url("../images/graphic-repeatable-paint.png") repeat-x left, $lRed;
 
 			.head {
 				background-color: $dRed;

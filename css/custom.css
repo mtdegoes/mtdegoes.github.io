@@ -56,17 +56,17 @@ header h5 span:last-child { padding-left: 1em; }
 #skills-abilities .roller { opacity: 0.0; position: absolute; right: -40px; top: -15px; width: 47px; height: 34px; background: url("../images/graphic-roller.png") no-repeat center; -ms-transform: rotate(-14deg); -webkit-transform: rotate(-14deg); transform: rotate(-14deg); -webkit-transition: 0.5s; transition: 0.5s; }
 #skills-abilities .roller .head { display: block; position: absolute; bottom: 0px; left: 0px; width: 9px; height: 30px; border-radius: 3px; background: radial-gradient(circle at 100% 50%, transparent 20%, rgba(255, 255, 255, 0.5) 21%, rgba(255, 255, 255, 0.5) 34%, transparent 35%, transparent), radial-gradient(circle at 0% 50%, transparent 20%, rgba(255, 255, 255, 0.5) 21%, rgba(255, 255, 255, 0.5) 34%, transparent 35%, transparent) 0 -50px; background-size: 40px 10px; -webkit-animation-name: MOVE-BG; -webkit-animation-duration: 2s; -webkit-animation-timing-function: linear; -webkit-animation-iteration-count: infinite; -webkit-box-shadow: -3px -3px 1px 2px rgba(0, 0, 0, 0.75); -moz-box-shadow: -3px -3px 1px 2px rgba(0, 0, 0, 0.75); box-shadow: -3px -3px 1px 2px rgba(0, 0, 0, 0.75); }
 #skills-abilities .paint { -webkit-transition: 1.5s; transition: 1.5s; display: block; width: 0px; height: 1em; }
-#skills-abilities .paint.blue { background-color: #80caff; }
+#skills-abilities .paint.blue { background: url("../images/graphic-repeatable-paint.png") repeat-x left, #80caff; }
 #skills-abilities .paint.blue .head { background-color: #54b8ff; }
-#skills-abilities .paint.green { background-color: #c6de4b; }
+#skills-abilities .paint.green { background: url("../images/graphic-repeatable-paint.png") repeat-x left, #c6de4b; }
 #skills-abilities .paint.green .head { background-color: #b6cc45; }
-#skills-abilities .paint.purple { background-color: #eb00eb; }
+#skills-abilities .paint.purple { background: url("../images/graphic-repeatable-paint.png") repeat-x left, #eb00eb; }
 #skills-abilities .paint.purple .head { background-color: #cf00cf; }
-#skills-abilities .paint.yellow { background-color: #fced6a; }
+#skills-abilities .paint.yellow { background: url("../images/graphic-repeatable-paint.png") repeat-x left, #fced6a; }
 #skills-abilities .paint.yellow .head { background-color: #fce83a; }
-#skills-abilities .paint.orange { background-color: #ffbc54; }
+#skills-abilities .paint.orange { background: url("../images/graphic-repeatable-paint.png") repeat-x left, #ffbc54; }
 #skills-abilities .paint.orange .head { background-color: #ffa821; }
-#skills-abilities .paint.red { background-color: #ff666c; }
+#skills-abilities .paint.red { background: url("../images/graphic-repeatable-paint.png") repeat-x left, #ff666c; }
 #skills-abilities .paint.red .head { background-color: #ff3b43; }
 #skills-abilities p { text-transform: uppercase; font-size: 0.9em; }
 #skills-abilities p:hover .roller { opacity: 1.0; }

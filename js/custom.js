@@ -51,7 +51,7 @@ $(document).ready(function(){
 
 			  		if (!elementAssigned){
 			  			$(this).addClass("assigned");
-						$(this).html("<a class='grey' href='#'></a>");
+						$(this).html("<a class='grey' href='#'><i class='fa fa-folder'></i></a>");
 			  		}
 			});
 		};
