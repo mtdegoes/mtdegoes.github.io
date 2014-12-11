@@ -51,4 +51,17 @@ $(document).ready(function(){
 
     });
 
+    //AUTO OVERLAY
+    $(".l1-auto-media").click(function(e){
+        e.preventDefault();
+
+        var imgSrc = $(this).attr("src"),
+            imgOverlay = "<div class='l1-auto-overlay'><div class='l1-auto-holder'><div class='l1-auto-height'><img src=" + imgSrc + "></div></div></div>";
+
+        $("body").prepend(imgOverlay);
+        $(".l1-auto-overlay").click(function(){
+            $(".l1-auto-overlay").remove();
+        });
+    });
+
 });

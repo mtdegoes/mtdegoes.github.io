@@ -1,70 +1,88 @@
 $(document).ready(function(){
 
-	function verticalAdjustHeader(){
-		var windowHeight = $( window ).height(),
-			headerHeight = $("header h1").height();
-		$("header h1").css("padding-top", ((windowHeight / 2) - headerHeight) + "px");
-		$("header").css("height", windowHeight + "px");
-	}
-	verticalAdjustHeader();
+	//PAGE SETTINGS
+	var boxSize = 150,
+		pageLink = [];
 
-    $(window).resize(function(){
-
-        verticalAdjustHeader();
-
-    });
-
-    //MINMIZE HEADER
-    $(window).scroll(function(){
-        var scrollPosition = $('body').scrollTop();
-
-        if (scrollPosition >= "200") {
-            $(".scroll-reminder").fadeOut(500);
-        } else if (scrollPosition <= "200") {
-            
-        }
-    });
-
-    //RANDOM WORD ASSEMBLY
-	function randomNumber(lowNumber, highNumber){
-		return Math.floor((Math.random() * highNumber) + lowNumber);
+	//RANDOM FUNCTION
+	function randomGortion(min, max){
+		return Math.floor(Math.random() * max) + min
 	}
 
-	function getRandomTitle(){
-    	var sectionNumber = $("section section").length,
-    		sectionWords  = "",
-    		wordsArray = [];
+	//PAGE LINKS
+	$("h1").each(function() {
 
-    	$("section").find("section").each(function() {
-			$(this).find("p").each(function() {
-				sectionWords=sectionWords+(" " + $(this).text());
-				
-        	});
-        });
-        wordsArray.push(sectionWords.split(" "));
-        return wordsArray;
-    }
-    var availableTitles = getRandomTitle();
+  		var elementHtml = $(this).html(),
+  			elementLink = elementHtml.replace(/\s+/g, '-').toLowerCase();
 
-    for (i = 0; i < randomNumber(2, 5); i++) { 
-
-    	var titleNum = availableTitles[0].length,
-    		randomNum = randomNumber(1, titleNum),
-    		currentString = availableTitles[0][randomNum];
-
-    	$(".fun-field ul").append("<li>" + currentString + "</li>");
-	}
-
-	$(".l1-auto-media").click(function(e){
-		e.preventDefault();
-
-		var imgSrc = $(this).attr("src"),
-			imgOverlay = "<div class='l1-auto-overlay'><div class='l1-auto-holder'><div class='l1-auto-height'><img src=" + imgSrc + "></div></div></div>";
-
-		$("body").prepend(imgOverlay);
-		$(".l1-auto-overlay").click(function(){
-			$(".l1-auto-overlay").remove();
-		});
+  		$(this).attr("id", elementLink);
+  		pageLink.push([elementHtml, elementLink]);
 	});
+
+	//GORT INITIATION
+	var windowHeight = $(window).outerHeight(),
+		windowWidth = $(window).outerWidth();
+		
+	if (windowWidth >= 460) {
+
+		var headerHeight = $("header").outerHeight(),
+			availableHeight = windowHeight - headerHeight;
+			verticalBoxes = Math.floor(availableHeight / boxSize),
+			horizontalBoxes = Math.floor(windowWidth / boxSize),
+			totalBoxes = horizontalBoxes * verticalBoxes;
+
+		$("#gort").width(horizontalBoxes * boxSize).height(verticalBoxes * boxSize);
+
+		var gortBoxes = "<div class='gortion'></div>",
+			assignedBoxes = pageLink.length,
+			remainingBoxes = totalBoxes - assignedBoxes;
+
+		//APPEND GORTIONS
+		for (i = 0; i < totalBoxes; i++){
+			$("#gort").append(gortBoxes);
+		}
+
+		//RANDOM COLOR
+		var colors = ["green", "orange", "blue", "purple", "yellow", "red"];
+
+		function fillRemaining(){
+			$(".gortion").each(function() {
+			  		var elementAssigned = $(this).hasClass("assigned");
+
+			  		if (!elementAssigned){
+			  			$(this).addClass("assigned");
+						$(this).html("<a class='grey' href='#'></a>");
+			  		}
+			});
+		};
+
+		//ASSIGN RELEVANT LINKS
+		for (i = 0; i < pageLink.length;){
+			var selectedElement = randomGortion(1, totalBoxes),
+				randomColor = randomGortion(0, 6),
+				linkElement = "<a class='" + colors[randomColor] + "' href='#" + pageLink[i][1] + "'>" + pageLink[i][0] + "</a>";
+
+			if (!$("#gort .gortion:nth-child(" + selectedElement + ")").hasClass("assigned")){
+
+				$("#gort .gortion:nth-child(" + selectedElement + ")").addClass("assigned");
+				$("#gort .gortion:nth-child(" + selectedElement + ")").html(linkElement);
+
+				i++
+				if (i == pageLink.length){
+					fillRemaining();
+				}
+			}
+		}
+	}
+
+	//MENU SCROLL
+	$(document).on("click", '#gort a', function(e) {
+        e.preventDefault();
+        var elementLink = $(this).attr("href");
+
+        $('html, body').animate({
+            scrollTop: $(elementLink).offset().top - 60
+        }, 500);
+    });
 
 });
