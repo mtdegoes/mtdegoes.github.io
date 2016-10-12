@@ -1,0 +1,431 @@
+/*
+Introduction:
+
+
+*/
+@import 'https://fonts.googleapis.com/css?family=Oswald:300,400,700';
+
+//CUSTOM DEFAULTS
+$varStdSpacing: 20px;
+$varStdWidth: 1366px;
+
+//ADVANCED TOOLS
+//Maintain Aspect Ratio Tool
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before{
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+}
+
+//DEFAULT RESETS
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+//FONT SPACING AND SETTINGS
+//DEFAULTS
+html {
+  font-size: 16px;
+  font-family: Oswald, sans-serif;
+}
+
+//<p>
+//Standard
+p {
+	font-size: 1.0em;
+}
+//Relational
+p + p {
+  margin-top: 1em;
+}
+p + h1, p + h2, p + h3, p + h4, p + h5, p + h6, p + ul, p + ol {
+  margin-top: 2em;
+}
+
+//<h?>
+//Standard
+h1 {
+	font-size: 2.2em;
+}
+h2 {
+	font-size: 1.6em
+}
+h3 {
+	font-size: 1.4em;
+}
+h4 {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1.0em;
+}
+h6 {
+	font-size: 0.8em;
+}
+//Relational
+h1 + h1, h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6, h1 + p, h1 + ul, h1 + ol {
+  margin-top: 0.7em;
+}
+h2 + h1, h2 + h2, h2 + h3, h2 + h4, h2 + h5, h2 + h6, h2 + p, h2 + ul, h2 + ol {
+  margin-top: 0.5em;
+}
+h3 + h1, h3 + h2, h3 + h3, h3 + h4, h3 + h5, h3 + h6, h3 + p, h3 + ul, h3 + ol {
+  margin-top: 0.5em;
+}
+h4 + h1, h4 + h2, h4 + h3, h4 + h4, h4 + h5, h4 + h6, h4 + p, h4 + ul, h4 + ol {
+  margin-top: 0.5em;
+}
+h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h5, h5 + h6, h5 + p, h5 + ul, h5 + ol {
+  margin-top: 0.5em;
+}
+h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6, h6 + p, h6 + ul, h6 + ol {
+  margin-top: 0.2em;
+}
+
+//<?l><li>
+//Standard
+ol {
+  margin-left: 2em;
+}
+ol li {
+  font-size: 1.0em;
+}
+//Relational
+ol + ol, ol + ul, ol + p, ol + h1, ol + h2, ol + h3, ol + h4, ol + h5, ol + h6 {
+  margin-top: 1em;
+}
+p + ol, h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
+  margin-top: 0.5em;
+}
+
+
+//Standard
+ul {
+  margin-left: 2em;
+}
+ul li {
+  font-size: 1.0em;	
+}
+//Relational
+ul + ul, ul + ol, ul + p, ul + h1, ul + h2, ul + h3, ul + h4, ul + h5, ul + h6 {
+  margin-top: 1em;
+}
+p + ul, h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul {
+  margin-top: 0.5em;
+}
+
+//Page Holders and Containers
+.var1-holder {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  &.holder-1 {
+    max-width: $varStdWidth/1;
+    margin: 0 auto;
+    @media screen and (max-width: $varStdWidth+$varStdSpacing*2) {
+      padding: 0 $varStdSpacing;
+    }
+  }
+  &.holder-2 {
+    max-width: $varStdWidth/2;
+    margin: 0 auto;
+    @media screen and (max-width: $varStdWidth/2+$varStdSpacing*2) {
+      padding: 0 $varStdSpacing;
+    }
+  }
+  &.holder-3 {
+    max-width: $varStdWidth/3;
+    margin: 0 auto;
+    @media screen and (max-width: $varStdWidth/3+$varStdSpacing*2) {
+      padding: 0 $varStdSpacing;
+    }
+  }
+  &.holder-4 {
+    max-width: $varStdWidth/4;
+    margin: 0 auto;
+    @media screen and (max-width: $varStdWidth/4+$varStdSpacing*2) {
+      padding: 0 $varStdSpacing;
+    }
+  }
+  &.holder-5 {
+    max-width: $varStdWidth/5;
+    margin: 0 auto;
+    @media screen and (max-width: $varStdWidth/5+$varStdSpacing*2) {
+      padding: 0 $varStdSpacing;
+    }
+  }
+  &.holder-6 {
+    max-width: $varStdWidth/6;
+    margin: 0 auto;
+    @media screen and (max-width: $varStdWidth/6+$varStdSpacing*2) {
+      padding: 0 $varStdSpacing;
+    }
+  }
+}
+
+//Column System
+.var1-col-sec {
+  &:after {
+    content: '';
+    display:block;
+    clear: both;
+  }
+  .var1-col {
+    float: left;
+    box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    &.col-1 {
+      width: 100%;
+    }
+    &.col-2 {
+      width: 50%;
+      @media screen and (max-width: $varStdWidth/2+$varStdSpacing*2) {
+        width: 100%;
+      }
+    }
+    &.col-3 {
+      width: 33.3%;
+      @media screen and (max-width: $varStdWidth/3+$varStdSpacing*2) {
+        width: 100%;
+      }
+      @media screen and (min-width: $varStdWidth/3+$varStdSpacing*2) and (max-width: $varStdWidth/2+$varStdSpacing*2) {
+        width: 50%;
+        &:last-child {
+          width: 100%;
+        }
+      }
+    }
+    &.col-4 {
+      width: 25%;
+      @media screen and (max-width: $varStdWidth/4+$varStdSpacing*2) {
+        width: 100%;
+      }
+      @media screen and (min-width: $varStdWidth/4+$varStdSpacing*2) and (max-width: $varStdWidth/2+$varStdSpacing*2) {
+        width: 50%;
+      }
+    }
+    &.col-5 {
+      width: 20%;
+      @media screen and (max-width: $varStdWidth/4+$varStdSpacing*2) {
+        width: 100%;
+      }
+      @media screen and (min-width: $varStdWidth/4+$varStdSpacing*2) and (max-width: $varStdWidth/2+$varStdSpacing*2) {
+        width: 50%;
+        &:last-child {
+          width: 100%;
+        }
+      }
+    }
+    &.col-6 {
+      width: 66.6%;
+      @media screen and (max-width: $varStdWidth/2+$varStdSpacing*2) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+//Section Defaults
+.var1-sec {
+  padding: $varStdSpacing*2 0;
+}
+
+//Custom CSS Options
+.var1-opt {
+  //Hide Content
+  &.opt-hide-lg {
+    @media screen and (min-width: 960px) {
+      display: none;
+    }
+  }
+  &.opt-hide-md {
+    @media screen and (min-width: 601px) and (max-width: 959px) {
+      display: none;
+    }
+  }
+  &.opt-hide-sm {
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+
+//APP CUSTOM STYLING
+
+body {
+  
+}
+
+header {
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  h5 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 0px;
+  }
+}
+
+#ras {
+  .veto {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: #ccc;
+    margin-right: 4px;
+    &.active {
+      background-color: blue;
+    }
+  }
+  .activity {
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding-left: 10px;
+      background-color: #fff;
+      line-height: 30px;
+      border: 1px solid #e6e6e6;
+      font-size: 0.9em;
+    }
+  }
+  .controls {
+    width: 100%;
+    text-align: center;
+    .addactivity {
+      border: 1px solid #fafafa;
+      -moz-box-shadow: 0 3px 8px -3px #000;
+      -webkit-box-shadow: 0 3px 8px -3px #000;
+      box-shadow: 0 3px 8px -3px #000;
+      display: block;
+      margin-top: $varStdSpacing;
+      line-height: 30px;
+      i {
+        font-size: 1.2em;
+      }
+      &:hover {
+        -moz-box-shadow: 0 1px 3px 0px #ccc;
+        -webkit-box-shadow: 0 1px 3px 0px #ccc;
+        box-shadow: 0 1px 3px 0px #ccc;
+      }
+      &:active {
+        -moz-box-shadow: inset 0 3px 6px -1px #666;
+        -webkit-box-shadow: inset 0 3px 6px -1px #666;
+        box-shadow: inset 0 3px 6px -1px #666;
+      }
+    }
+  }
+  .submit {
+    background-color: transparent;
+    width: 100%;
+    display: block;
+    border: 1px solid #fafafa;
+    -moz-box-shadow: 0 3px 8px -3px #000;
+    -webkit-box-shadow: 0 3px 8px -3px #000;
+    box-shadow: 0 3px 8px -3px #000;
+    display: block;
+    margin-top: $varStdSpacing;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-size: 1.0em;
+    &:hover {
+      -moz-box-shadow: 0 1px 3px 0px #ccc;
+      -webkit-box-shadow: 0 1px 3px 0px #ccc;
+      box-shadow: 0 1px 3px 0px #ccc;
+    }
+    &:active {
+      -moz-box-shadow: inset 0 3px 6px -1px #666;
+      -webkit-box-shadow: inset 0 3px 6px -1px #666;
+      box-shadow: inset 0 3px 6px -1px #666;
+    }
+  }
+  .addactivity, .submit {
+    cursor: pointer;
+  }
+}
+
+footer {
+  background-color: #0f0f10;
+  padding-bottom: 1000px;
+  h5 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #dcc275;
+  }
+  #activity-results {
+    position: relative;
+    margin-top: $varStdSpacing;
+    .card-divider {
+      z-index: 1;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,000000+50,ffffff+100&0+0,0+10,0.3+47,0.88+50,0.3+53,0+90,0+100 */
+      background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(204,204,204,0) 10%, rgba(15,15,15,0.3) 47%, rgba(0,0,0,0.88) 50%, rgba(15,15,15,0.3) 53%, rgba(204,204,204,0) 90%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(204,204,204,0) 10%,rgba(15,15,15,0.3) 47%,rgba(0,0,0,0.88) 50%,rgba(15,15,15,0.3) 53%,rgba(204,204,204,0) 90%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(204,204,204,0) 10%,rgba(15,15,15,0.3) 47%,rgba(0,0,0,0.88) 50%,rgba(15,15,15,0.3) 53%,rgba(204,204,204,0) 90%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+    }
+    .container { 
+      float: left;
+      margin: 0 2px;
+      width: 60px;
+      height: 80px;
+      position: relative;
+      perspective: 800px;
+      .card {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+        -webkit-transition-timing-function: cubic-bezier(.15,.16,.33,.99);
+        transition-timing-function: cubic-bezier(.15,.16,.33,.99);
+        &.timing-2 {
+          transition: transform 3.5s;
+        }
+        &.timing-3 {
+          transition: transform 4s;
+        }
+        &.timing-4 {
+          transition: transform 4.5s;
+        }
+        &.timing-5 {
+          transition: transform 5.5s;
+        }
+        figure {
+          margin: 0;
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          font-size: 3.0em;
+          text-align: center;
+          line-height: 80px;
+          color: #dcc275;
+        }
+        .front {
+          background: #1d1f2e;
+        }
+        .back {
+          background: #1d1f2e;
+          transform: rotateX( 180deg );
+        }
+        &.flipped {
+          transform: rotateX( -4500deg );
+        }
+      }
+    }
+  }
+}

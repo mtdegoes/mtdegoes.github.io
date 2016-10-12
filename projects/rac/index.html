@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--CUSTOM ICONS-->
+        <script src="https://use.fontawesome.com/6acdaa4e3d.js"></script>
+
+        <!--JQUERY-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        
+        <script type="text/javascript" src="js/custom.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/custom.css">
+        <title>Random Activity Selector</title>
+    </head>
+    <body>
+        <header>
+            <section class="var1-holder holder-3">
+                <h1>Random Activity Selector</h1>
+                <h5>For People Who Can't Make Up Their Minds</h5>
+            </section>
+        </header>
+        <section class="var1-holder holder-3">
+            <div class="var1-sec">
+                <form id="ras">
+                    <div class="activity-list">
+                        <div class="activity var1-col-sec">
+                            <div class="var1-col col-1">
+                                <input type="text" name="activity" placeholder="Activity">
+                            </div>
+                        </div>
+                        <div class="activity var1-col-sec">
+                            <div class="var1-col col-1">
+                                <input type="text" name="activity" placeholder="Activity">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls var1-col-sec">
+                        <div class="var1-col col-2">
+                            <div type="button" class="addactivity">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="var1-col col-2">
+                            <input class="submit" type="submit" value="Decide">
+                        </div>
+                    </div>
+                    <!--<div type="button" class="savelist">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    </div>-->
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="var1-sec">
+                <h5>Selected Activity</h5>
+                <div id="activity-results" class="var1-col-sec">
+                    <div class="card-divider"></div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
