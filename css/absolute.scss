@@ -1,0 +1,291 @@
+/*
+Introduction:
+
+
+*/
+
+//DEFAULT RESETS
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+//CUSTOM DEFAULTS
+$absStdSpacing: 20px;
+$absStdWidth: 1280px;
+$absStdFontSize: 16px;
+$absStdMobile: 600px;
+$absStdTablet: 960px;
+$absStdDesktop: $absStdWidth;
+
+//ADVANCED TOOLS
+//Maintain Aspect Ratio Tool
+@mixin abs-aspectratio($ratiowidth, $ratioheight) {
+  position: relative;
+  &:before{
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: ($ratioheight / $ratiowidth) * 100%;
+  }
+}
+
+//CSS Transition Assignment
+@mixin abs-transition($speedins){
+  -webkit-transition: $speedins; /* Safari */
+  transition: $speedins;
+}
+
+//FONT SPACING AND SETTINGS
+//DEFAULTS
+html {
+  font-size: $absStdFontSize;
+}
+
+//<p>
+//Standard
+p {
+	font-size: 1.0em;
+  line-height: 1.6em;
+}
+//Relational
+p + p {
+  margin-top: 1em;
+}
+p + h1, p + h2, p + h3, p + h4, p + h5, p + h6, p + ul, p + ol {
+  margin-top: 2em;
+}
+
+//<h?>
+//Standard
+h1 {
+	font-size: 3.4em;
+  line-height: 1.4em;
+}
+h2 {
+	font-size: 2.2em;
+  line-height: 1.4em;
+}
+h3 {
+	font-size: 1.8em;
+  line-height: 1.3em;
+}
+h4 {
+	font-size: 1.4em;
+  line-height: 1.3em;
+}
+h5 {
+	font-size: 1.0em;
+  line-height: 1.2em;
+}
+h6 {
+	font-size: 0.8em;
+  line-height: 1.2em;
+}
+
+//Relational
+//Accending
+h1 + h1, h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6, h1 + p, h1 + ul, h1 + ol, h2 + h2, h2 + h3, h2 + h4, h2 + h5, h2 + h6, h2 + p, h2 + ul, h2 + ol, h3 + h3, h3 + h4, h3 + h5, h3 + h6, h3 + p, h3 + ul, h3 + ol, h4 + h4, h4 + h5, h4 + h6, h4 + p, h4 + ul, h4 + ol, h5 + h5, h5 + h6, h5 + p, h5 + ul, h5 + ol, h6 + h6, h6 + p, h6 + ul, h6 + ol {
+  margin-top: 0.5em;
+}
+//Decending
+h2 + h1, h3 + h1, h3 + h2, h4 + h1, h4 + h2, h4 + h3, h5 + h1, h5 + h2, h5 + h3, h5 + h4, h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5 {
+  margin-top: 2em;
+}
+
+//<?l><li>
+//Standard
+ol, ul {
+  margin-left: 2em;
+}
+ol li, ul li {
+  font-size: 1.0em;
+  line-height: 1.2em;
+}
+//Relational
+p + ul, p + ol, ol + ol, ol + ul, ol + p, ul + ul, ul + ol, ul + p {
+  margin-top: 1em;
+}
+ol + h1, ol + h2, ol + h3, ol + h4, ol + h5, ol + h6, ul + h1, ul + h2, ul + h3, ul + h4, ul + h5, ul + h6 {
+  margin-top: 2em;
+}
+h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol, h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul {
+  margin-top: 0.5em;
+}
+
+//HORIZONTAL CONTAINERS/HOLDERS
+.abs-holder {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  &.holder-100 {
+    $holderWidth-100: $absStdWidth;
+    max-width: $holderWidth-100;
+    @media screen and (max-width: $holderWidth-100 + $absStdSpacing*2) {
+      padding-left: $absStdSpacing;
+      padding-right: $absStdSpacing;
+    }
+  }
+  &.holder-75 {
+    $holderWidth-75: $absStdWidth - $absStdWidth/4;
+    max-width: $holderWidth-75;
+    @media screen and (max-width: $holderWidth-75 + $absStdSpacing*2) {
+      padding-left: $absStdSpacing;
+      padding-right: $absStdSpacing;
+    }
+  }
+  &.holder-50 {
+    $holderWidth-50: $absStdWidth - $absStdWidth/2;
+    max-width: $holderWidth-50;
+    @media screen and (max-width: $holderWidth-50 + $absStdSpacing*2) {
+      padding-left: $absStdSpacing;
+      padding-right: $absStdSpacing;
+    }
+  }
+  &.holder-25 {
+    $holderWidth-25: $absStdWidth/4;
+    max-width: $holderWidth-25;
+    @media screen and (max-width: $holderWidth-25 + $absStdSpacing*2) {
+      padding-left: $absStdSpacing;
+      padding-right: $absStdSpacing;
+    }
+  }
+}
+
+//GRID/COLUMN SYSTEM
+.abs-col-sec {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .col {
+    float: left;
+    box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    padding: $absStdSpacing/2;
+    &.col-100 {
+      width: 100%;
+      float: none;
+    }
+    &.col-90 {
+      width: 90%;
+    }
+    &.col-80 {
+      width: 80%;
+    }
+    &.col-75 {
+      width: 75%;
+    }
+    &.col-70 {
+      width: 70%;
+    }
+    &.col-66 {
+      width: 66.6%;
+    }
+    &.col-60 {
+      width: 60%;
+    }
+    &.col-50 {
+      width: 50%;
+    }
+    &.col-40 {
+      width: 40%;
+    }
+    &.col-33 {
+      width: 33.3%;
+    }
+    &.col-30 {
+      width: 30%;
+    }
+    &.col-25 {
+      width: 25%;
+    }
+    &.col-20 {
+      width: 20%;
+    }
+    &.col-10 {
+      width: 10%;
+    }
+    &:first-child {
+      padding-left: 0px;
+    }
+    &:last-child {
+      padding-right: 0px;
+    }
+    //MOBILE ADJUSTMENTS
+    @media screen and (min-width: $absStdMobile + 1) and (max-width: $absStdTablet - 1) {
+      &:nth-child(odd){
+        padding-left: 0px;
+      }
+      &:nth-child(even){
+        padding-right: 0px;
+      }
+      &.col-90, &.col-80, &.col-75, &.col-70, &.col-66 , &.col-60 {
+        width: 100%;
+        float: none;
+      }
+      &.col-50, &.col-40, &.col-33 , &.col-30, &.col-25, &.col-20, &.col-10 {
+        width: 50%;
+      }
+    }
+    @media screen and (max-width: $absStdMobile) {
+      padding-left: 0px;
+      padding-right: 0px;
+      &.col-90, &.col-80, &.col-75, &.col-70, &.col-66 , &.col-60, &.col-50, &.col-40, &.col-33 , &.col-30, &.col-25, &.col-20, &.col-10 {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+}
+
+//UTILITIES
+.abs-opt {
+  //Spacing
+  &.vertical-space {
+    padding-top: $absStdSpacing*2;
+    padding-bottom: $absStdSpacing*2;
+  }
+
+  //Content Fill
+  &.fill-area {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  //Center Margin
+  &.align-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  //Hide Content
+  &.hide-xl {
+    @media screen and (min-width: $absStdDesktop + 1) {
+      display: none;
+    }
+  }
+  &.hide-lg {
+    @media screen and (min-width: $absStdTablet + 1) and (max-width: $absStdDesktop - 1) {
+      display: none;
+    }
+  }
+  &.hide-md {
+    @media screen and (min-width: $absStdMobile + 1) and (max-width: $absStdTablet - 1) {
+      display: none;
+    }
+  }
+  &.hide-sm {
+    @media screen and (max-width: $absStdMobile) {
+      display: none;
+    }
+  }
+}

@@ -1,1 +1,46 @@
-$(document).ready(function(){function t(t,o){return Math.floor(Math.random()*o)+t}function o(){$(".gortion").each(function(){var t=$(this).hasClass("assigned");t||($(this).addClass("assigned"),$(this).html("<a class='grey' href='#'></a>"))})}var a=150,e=[];$("h1").each(function(){var t=$(this).html(),o=t.replace(/\s+/g,"-").toLowerCase();$(this).attr("id",o),e.push([t,o])});var r=$(window).outerHeight(),s=$(window).outerWidth();if(s>=460){var h=$("header").outerHeight(),n=r-h;verticalBoxes=Math.floor(n/a),horizontalBoxes=Math.floor(s/a),totalBoxes=horizontalBoxes*verticalBoxes,$("#gort").width(horizontalBoxes*a).height(verticalBoxes*a);var l="<div class='gortion'></div>",d=e.length,g=totalBoxes-d;for(i=0;totalBoxes>i;i++)$("#gort").append(l);var c=["green","orange","blue","purple","yellow","red"];for(i=0;i<e.length;){var f=t(1,totalBoxes),u=t(0,6),v="<a class='"+c[u]+"' href='#"+e[i][1]+"'>"+e[i][0]+"</a>";$("#gort .gortion:nth-child("+f+")").hasClass("assigned")||($("#gort .gortion:nth-child("+f+")").addClass("assigned"),$("#gort .gortion:nth-child("+f+")").html(v),i++,i==e.length&&o())}}$(document).on("click","#gort a",function(t){t.preventDefault();var o=$(this).attr("href");$("html, body").animate({scrollTop:$(o).offset().top-60},500)})});
+$(document).ready(function(){
+  var portfolioLength = 35,
+      randomCSS = [];
+
+  //FILL PORTFOLIO
+  for(var i = 0; i < portfolioLength; i++) {
+    var templateFrame = '<div class="image" style="background-image: url(images/portfolio/' + (i+1) + '.jpg)"></div>';
+
+    $('#portfolio .gallery').append(templateFrame);
+
+    $('#portfolio .gallery .image').click(function(){
+      var imageURL = $(this).css('background-image'),
+          currentIndex = $(this).index();
+      $("#portfolio .foreground").addClass('active');
+      $("#portfolio .foreground").css('background', 'rgba(255,255,255,0.9) url(images/portfolio/' + currentIndex + '.jpg) no-repeat center');
+      $("#portfolio .foreground").css('background-size', 'contain');
+    });
+
+    $("#portfolio .foreground").click(function(){
+      $(this).removeClass('active');
+    });
+  }
+
+  $('.switcher').click(function(){
+    $('#photo .visual').addClass('active');
+  });
+
+  $.ajax({
+    url: "css/absolute.css",
+    dataType: "text",
+    success: function(cssText) {
+      var cssSplit = cssText.split('}');
+
+      randomCSS.push(cssSplit);
+
+      $("#skills .card" ).each(function(){
+        var randomNumber = Math.floor(Math.random() * randomCSS[0].length) + 1,
+            stringMe = String(randomCSS[0][randomNumber]),
+            jsElement = '<h6>' + stringMe.replace(/\s\s+/g, ' ') + '</h6>';
+
+        $(this).prepend(jsElement);
+      });
+    }
+  });
+});
+
