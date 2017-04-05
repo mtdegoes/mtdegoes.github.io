@@ -208,6 +208,24 @@ header .nav a .text {
   letter-spacing: 1px;
 }
 
+.switcher {
+  position: absolute;
+  cursor: pointer;
+  top: 0px;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
+
+.switcher p {
+  font-family: 'Didact Gothic', sans-serif;
+  line-height: 20px;
+}
+
 section#photo .visual {
   position: relative;
   filter: grayscale(100%);
@@ -223,27 +241,37 @@ section#photo .visual:before {
   padding-top: 62.5%;
 }
 
-section#photo .visual .switcher {
-  position: absolute;
-  cursor: pointer;
-  top: 0px;
-  right: 0px;
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
-  text-align: center;
-  background-color: red;
-  color: #fff;
-}
-
-section#photo .visual .switcher p {
-  font-family: 'Didact Gothic', sans-serif;
-  line-height: 20px;
-}
-
 section#photo .visual.active {
   background: url("../images/background-about-me-alt.jpg") no-repeat center;
   background-size: cover;
+}
+
+section#skills {
+  position: relative;
+  overflow: hidden;
+}
+
+section#skills .switcher {
+  top: 60px;
+}
+
+section#skills .info {
+  position: absolute;
+  top: 40px;
+  right: -1000px;
+  width: 100%;
+  max-width: 360px;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-transition: 1s;
+  /* Safari */
+  transition: 1s;
+}
+
+section#skills .info.active {
+  right: 20px;
 }
 
 section#skills .block {

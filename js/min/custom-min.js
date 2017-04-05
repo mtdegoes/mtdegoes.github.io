@@ -21,8 +21,12 @@ $(document).ready(function(){
     });
   }
 
-  $('.switcher').click(function(){
-    $('#photo .visual').addClass('active');
+  $('.switcher.photo').click(function(){
+    $('#photo .visual').toggleClass('active');
+  });
+
+  $('.switcher.skills').click(function(){
+    $('#skills .info').toggleClass('active');
   });
 
   $.ajax({
