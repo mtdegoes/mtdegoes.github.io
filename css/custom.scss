@@ -214,6 +214,60 @@ section {
       }
     }
   }
+  &#qa {
+    overflow: hidden;
+    .questions {
+      margin-top: 20px;
+      position: relative;
+      &.disabled {
+        p {
+          opacity: 0.4;
+        }
+      }
+      p {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        margin: 0 0 4px 0;
+        padding: 4px 12px;
+        cursor: help;
+        @include abs-transition(1s);
+        opacity: 1.0;
+        &:hover {
+          background-color: #333;
+          border: 1px solid #333;
+          color: #fff;
+        }
+        &.hidden {
+          position: absolute;
+          bottom: 0px;
+          margin-left: 200px;
+          opacity: 0.0;
+        }
+        &.hidden-alt {
+          position: absolute;
+          bottom: 0px;
+          right: -1000px;
+          opacity: 0.0;
+        }
+      }
+    }
+    .answers {
+      background-color: #ccc;
+      p {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #666;
+        padding: 40px 20px;
+        box-sizing: border-box;
+      }
+      a {
+        color: #000;
+      }
+    }
+  }
   &#skills {
     position: relative;
     overflow: hidden;

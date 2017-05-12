@@ -246,6 +246,70 @@ section#photo .visual.active {
   background-size: cover;
 }
 
+section#qa {
+  overflow: hidden;
+}
+
+section#qa .questions {
+  margin-top: 20px;
+  position: relative;
+}
+
+section#qa .questions.disabled p {
+  opacity: 0.4;
+}
+
+section#qa .questions p {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  margin: 0 0 4px 0;
+  padding: 4px 12px;
+  cursor: help;
+  -webkit-transition: 1s;
+  /* Safari */
+  transition: 1s;
+  opacity: 1.0;
+}
+
+section#qa .questions p:hover {
+  background-color: #333;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+section#qa .questions p.hidden {
+  position: absolute;
+  bottom: 0px;
+  margin-left: 200px;
+  opacity: 0.0;
+}
+
+section#qa .questions p.hidden-alt {
+  position: absolute;
+  bottom: 0px;
+  right: -1000px;
+  opacity: 0.0;
+}
+
+section#qa .answers {
+  background-color: #ccc;
+}
+
+section#qa .answers p {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #666;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+section#qa .answers a {
+  color: #000;
+}
+
 section#skills {
   position: relative;
   overflow: hidden;
